@@ -1,0 +1,16 @@
+.login{
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    background: url("https://www.newpearl.co.nz/wp-content/uploads/2017/11/logo_newpearl_13112017.png") no-repeat;
+}
+
+.loginForm{
+    flex:1;
+    width: 70%;
+    max-width: 340px;
+}
+
+.loginFormButton{
+    width: 100%;
+}

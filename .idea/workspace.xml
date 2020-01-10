@@ -1,25 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6147ab0d-39d3-4044-922e-9c4e28734021" name="Default Changelist" comment="" />
+    <list default="true" id="6147ab0d-39d3-4044-922e-9c4e28734021" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/env.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/jest/cssTransform.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/jest/fileTransform.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/modules.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/paths.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/pnpTs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/webpack.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/webpackDevServer.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/build.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/start.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/asserts/image/new_pearl_logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/common/LogoutModal/LogoutModal.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/common/LotteryAddModal/LotteryAddModal.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/actions/lotteryAction.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/reducers/lotteryReducer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/Base64Encoder.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/ObjectIdDecoder.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1W81W6IrWvm884nDCP1dGdvh3Hz" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="yarn" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Base64Encoder.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/utils/Base64Encoder.js" working-dir="$PROJECT_DIR$/src/utils">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Node.js.Base64Encoder.js" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -43,11 +97,59 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1578516436414</updated>
-      <workItem from="1578516440273" duration="85000" />
+      <workItem from="1578516440273" duration="754000" />
+      <workItem from="1578517207064" duration="19047000" />
+      <workItem from="1578548282869" duration="1137000" />
+      <workItem from="1578550793717" duration="26172000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1632" height="255" key="GridCell.Tab.0.bottom" timestamp="1578609879284">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state width="1632" height="255" key="GridCell.Tab.0.bottom/-1920.23.1920.1057/0.23.1680.956@-1920.23.1920.1057" timestamp="1578531824448" />
+    <state width="1632" height="255" key="GridCell.Tab.0.bottom/-1920.23.1920.979/0.23.1680.1027@-1920.23.1920.979" timestamp="1578544924506" />
+    <state width="1632" height="255" key="GridCell.Tab.0.bottom/-1920.23.1920.979/0.23.1680.1027@0.23.1680.1027" timestamp="1578609879284" />
+    <state width="1632" height="255" key="GridCell.Tab.0.bottom/-1920.23.1920.980/0.23.1680.1027@-1920.23.1920.980" timestamp="1578546391275" />
+    <state width="1632" height="255" key="GridCell.Tab.0.center" timestamp="1578609879283">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state width="1632" height="255" key="GridCell.Tab.0.center/-1920.23.1920.1057/0.23.1680.956@-1920.23.1920.1057" timestamp="1578531824447" />
+    <state width="1632" height="255" key="GridCell.Tab.0.center/-1920.23.1920.979/0.23.1680.1027@-1920.23.1920.979" timestamp="1578544924505" />
+    <state width="1632" height="255" key="GridCell.Tab.0.center/-1920.23.1920.979/0.23.1680.1027@0.23.1680.1027" timestamp="1578609879283" />
+    <state width="1632" height="255" key="GridCell.Tab.0.center/-1920.23.1920.980/0.23.1680.1027@-1920.23.1920.980" timestamp="1578546391274" />
+    <state width="1632" height="255" key="GridCell.Tab.0.left" timestamp="1578609879282">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state width="1632" height="255" key="GridCell.Tab.0.left/-1920.23.1920.1057/0.23.1680.956@-1920.23.1920.1057" timestamp="1578531824446" />
+    <state width="1632" height="255" key="GridCell.Tab.0.left/-1920.23.1920.979/0.23.1680.1027@-1920.23.1920.979" timestamp="1578544924504" />
+    <state width="1632" height="255" key="GridCell.Tab.0.left/-1920.23.1920.979/0.23.1680.1027@0.23.1680.1027" timestamp="1578609879282" />
+    <state width="1632" height="255" key="GridCell.Tab.0.left/-1920.23.1920.980/0.23.1680.1027@-1920.23.1920.980" timestamp="1578546391274" />
+    <state width="1632" height="255" key="GridCell.Tab.0.right" timestamp="1578609879283">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state width="1632" height="255" key="GridCell.Tab.0.right/-1920.23.1920.1057/0.23.1680.956@-1920.23.1920.1057" timestamp="1578531824447" />
+    <state width="1632" height="255" key="GridCell.Tab.0.right/-1920.23.1920.979/0.23.1680.1027@-1920.23.1920.979" timestamp="1578544924506" />
+    <state width="1632" height="255" key="GridCell.Tab.0.right/-1920.23.1920.979/0.23.1680.1027@0.23.1680.1027" timestamp="1578609879283" />
+    <state width="1632" height="255" key="GridCell.Tab.0.right/-1920.23.1920.980/0.23.1680.1027@-1920.23.1920.980" timestamp="1578546391275" />
+    <state x="147" y="23" width="1224" height="649" key="dock-window-1" timestamp="1578544928574">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state x="147" y="23" width="1224" height="649" key="dock-window-1/-1920.23.1920.979/0.23.1680.1027@-1920.23.1920.979" timestamp="1578544928574" />
+    <state x="-1281" y="229" key="run.anything.popup" timestamp="1578545818964">
+      <screen x="-1920" y="23" width="1920" height="980" />
+    </state>
+    <state x="-1281" y="229" key="run.anything.popup/-1920.23.1920.980/0.23.1680.1027@-1920.23.1920.980" timestamp="1578545818964" />
+    <state x="-1281" y="232" width="670" height="676" key="search.everywhere.popup" timestamp="1578543930871">
+      <screen x="-1920" y="23" width="1920" height="979" />
+    </state>
+    <state x="-1281" y="232" width="670" height="676" key="search.everywhere.popup/-1920.23.1920.979/0.23.1680.1027@-1920.23.1920.979" timestamp="1578543930871" />
   </component>
 </project>
