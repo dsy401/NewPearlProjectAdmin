@@ -2,20 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6147ab0d-39d3-4044-922e-9c4e28734021" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/common/DashboardBody/DashboardBody.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/containers/Dashboard/DashboardRedirect/DashboardRedirect.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/containers/Dashboard/Home/Home.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/containers/Dashboard/LocalClient/LocalClient.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/graph/ProductNumGraph.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/graph/SaleGraph.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/serverAPI.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/serverAPI.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/DashboardBody/DashboardBody.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/DashboardBody/DashboardBody.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/layout/DashboardLayout/DashboardLayout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/layout/DashboardLayout/DashboardLayout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/Dashboard/Dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Dashboard/Dashboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/Dashboard/LotteryManagement/LotteryManagement.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Dashboard/LotteryManagement/LotteryManagement.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/Dashboard/WebClient/WebClient.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Dashboard/WebClient/WebClient.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/Login/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Login/Login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/Dashboard/Home/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Dashboard/Home/Home.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,8 +18,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -90,7 +83,7 @@
       <workItem from="1578517207064" duration="19047000" />
       <workItem from="1578548282869" duration="1137000" />
       <workItem from="1578550793717" duration="28999000" />
-      <workItem from="1578638894119" duration="5387000" />
+      <workItem from="1578638894119" duration="6698000" />
     </task>
     <servers />
   </component>
