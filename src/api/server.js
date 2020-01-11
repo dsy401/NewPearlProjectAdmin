@@ -36,6 +36,11 @@ axios.interceptors.response.use(
     }
 
 ,error => {
+        if (error.response.data === "Unauthorized Access" || error.response.status===401){
+            localStorage.removeItem('token')
+            window.location = "/login"
+            alert("Login timeout, plz login again")
+        }
         return Promise.reject(error.response.data)
     });
 

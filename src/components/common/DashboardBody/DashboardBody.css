@@ -1,0 +1,7 @@
+.user{
+    cursor: pointer;
+}
+
+.user:hover{
+    color: cornflowerblue;
+}

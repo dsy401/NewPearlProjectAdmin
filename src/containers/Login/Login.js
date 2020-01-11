@@ -42,6 +42,7 @@ class LoginForm extends Component{
                 formData.append("password",values.password)
                 Login(formData).then(res=>{
                     localStorage.setItem("token", res.data.token)
+                    localStorage.setItem("name", res.data.user_name)
                     window.location = '/dashboard'
                 }).catch(error=>{
                     alert(error.error_message)

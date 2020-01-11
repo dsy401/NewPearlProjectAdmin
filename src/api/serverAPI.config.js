@@ -20,7 +20,8 @@ const url = {
     GetWebClient: HOST + 'api/contact',
     DeleteWebClient: (id) =>{
         return HOST + 'api/contact/' + id
-    }
+    },
+    TokenValidate: HOST + "api/token_validate"
 };
 
 export default url

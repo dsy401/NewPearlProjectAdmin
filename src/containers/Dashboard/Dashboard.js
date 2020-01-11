@@ -11,30 +11,50 @@ import WebClient from "./WebClient/WebClient";
 import ComponentWithParameter from "../../hoc/ComponentWithParameter";
 import {connect} from 'react-redux'
 import {SetPos} from "../../redux/actions/menuBarAction";
+import DashboardRedirect from "./DashboardRedirect/DashboardRedirect";
+import {TokenValidate} from '../../api/api'
+import LocalClient from "./LocalClient/LocalClient";
+import Home from "./Home/Home";
+
 
 class Dashboard extends Component{
     state = {
         screens: [
             {
+                name: "Home",
+                component: Home,
+                icon: "user",
+                path: this.props.match.path +"/home",
+                pos:0
+            },
+            {
                 name: "Lottery Management",
                 component: LotteryManagement,
                 icon: "user",
                 path: this.props.match.path +"/lotterymanagement",
-                pos:0
+                pos:1
             },
             {
                 name: "Web Client",
                 component: WebClient,
                 icon: "user",
                 path: this.props.match.path +"/webclient",
-                pos:1
+                pos:2
+            },
+            {
+                name: "Local Client",
+                component: LocalClient,
+                icon: "user",
+                path: this.props.match.path +"/localclient",
+                pos:3
             }
         ]
     }
     componentDidMount = () => {
-        this.props.history.push('/dashboard/lotterymanagement')
+       TokenValidate().then(res=>{
+           console.log("token 没过期")
+       })
     };
-
     render(){
         return (
             <DashboardLayout screens={this.state.screens}>
@@ -44,6 +64,7 @@ class Dashboard extends Component{
                             <Route key={i.toString()} path={s.path} component={ComponentWithParameter(s.component,this.props.SetPos,s.pos,s.name)}/>
                         )
                     })}
+                    <Route path={`${this.props.match.path}/`} component={DashboardRedirect}/>
                     <Redirect from={"*"} to={"/404"}/>
                 </Switch>
             </DashboardLayout>

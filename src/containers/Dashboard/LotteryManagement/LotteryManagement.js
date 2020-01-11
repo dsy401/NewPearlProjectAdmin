@@ -60,15 +60,25 @@ class EditableCell extends React.Component {
 
 class EditableTable extends React.Component {
     componentDidMount() {
+        this.setState({
+            loading: true
+        })
         GetLottery().then(res=>{
-            this.setState({data:
-                    res.data.map((s)=>{
-                        return (
-                            {name: s.name, phone:s.phone, gender: s.gender,key: s._id.$oid}
-                        )
-                    })
+            this.setState({
+                loading: false
+            },()=>{
+                this.setState({data:
+                        res.data.map((s)=>{
+                            return (
+                                {name: s.name, phone:s.phone, gender: s.gender,key: s._id.$oid}
+                            )
+                        })
+                })
             })
         }).catch(err=>{
+            this.setState({
+                loading: false
+            })
             alert("Server Error")
         })
 
@@ -90,7 +100,8 @@ class EditableTable extends React.Component {
         this.state = {
             data:[],
             modalVisible: false,
-            editingKey: ''
+            editingKey: '',
+            loading: false
         };
         this.columns = [
             {
@@ -150,15 +161,20 @@ class EditableTable extends React.Component {
     isEditing = record => record.key === this.state.editingKey;
 
     DeleteHandler = (id) =>{
+        this.setState({loading:true})
         DeleteLottery(id).then(res=>{
-            this.setState({
-                data: res.data.map((s)=>{
-                    return (
-                        {name: s.name, phone:s.phone, gender: s.gender,key: s._id.$oid_id.$oid}
-                    )
+            this.setState({loading:false},()=>{
+                this.setState({
+                    data: res.data.map((s)=>{
+                        return (
+                            {name: s.name, phone:s.phone, gender: s.gender,key: s._id.$oid_id}
+                        )
+                    })
                 })
             })
+
         }).catch(err=>{
+            this.setState({loading:false})
             alert("delete Fail, Plz try it later")
         })
     }
@@ -176,16 +192,21 @@ class EditableTable extends React.Component {
             fdata.append('name',row.name)
             fdata.append('phone',row.phone)
             fdata.append('gender',row.gender)
+            this.setState({loading:true})
             UpdateLottery(key,fdata).then(res=>{
-                this.setState({
-                    data: res.data.map((s)=>{
+                this.setState({loading:false},()=>{
+                    this.setState({
+                        data: res.data.map((s)=>{
                             return (
                                 {name: s.name, phone:s.phone, gender: s.gender,key: s._id.$oid}
                             )
                         }),
-                    editingKey: ''
-                });
+                        editingKey: ''
+                    });
+                })
+
             }).catch(err=>{
+                this.setState({loading:false})
                 console.log(err)
             })
         });
@@ -233,6 +254,7 @@ class EditableTable extends React.Component {
                 </Button>
                 <LotteryAddModal closeModal={this.closeLotteryAddModal} visible={this.state.modalVisible}/>
                 <Table
+                    loading={this.state.loading}
                     components={components}
                     bordered
                     dataSource={this.state.data}

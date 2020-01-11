@@ -9,14 +9,18 @@ class WebClient extends Component{
 
 
     DeleteHandler = (row) =>{
+        this.setState({isLoading:true})
         DeleteWebClient(row._id.$oid).then(res=>{
-            this.setState({
-                clients: res.data.map((s,i)=>{
-                    s.key = i.toString()
-                    return s
+            this.setState({isLoading:false},()=>{
+                this.setState({
+                    clients: res.data.map((s,i)=>{
+                        s.key = i.toString()
+                        return s
+                    })
                 })
             })
         }).catch(err=>{
+            this.setState({isLoading:false})
             console.log(err)
         })
     };
@@ -78,10 +82,11 @@ class WebClient extends Component{
 
             <DashboardBody title={this.props.name}>
                 <div>
-                    <Button loading={this.state.isLoading} onClick={this.FetchClients} type="primary" style={{ marginBottom: 16 }}>
+                    <Button loading={this.state.isLoading} disabled={this.state.isLoading} onClick={this.FetchClients} type="primary" style={{ marginBottom: 16 }}>
                         Refresh
                     </Button>
                     <Table
+                        loading={this.state.isLoading}
                         columns={this.columns}
                         expandedRowRender={record => <p style={{ margin: 0 }}>{record.message}</p>}
                         dataSource={this.state.clients}

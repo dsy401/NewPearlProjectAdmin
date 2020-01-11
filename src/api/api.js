@@ -69,4 +69,14 @@ export const DeleteWebClient = (id) =>{
             Authorization: ' Basic '+ Base64Encoder(localStorage.getItem('token'))
         }
     })
+};
+
+export const TokenValidate = () =>{
+    return server({
+        url: url.TokenValidate,
+        method: "GET",
+        headers: {
+            Authorization: ' Basic '+ Base64Encoder(localStorage.getItem('token'))
+        }
+    })
 }
