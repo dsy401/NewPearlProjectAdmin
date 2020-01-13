@@ -1,8 +1,7 @@
 import {Table, Input, Popconfirm, Form, Button, Select} from 'antd';
-import React from 'react'
+import React,{Fragment} from 'react'
 import DashboardBody from "../../../components/common/DashboardBody/DashboardBody";
 import {DeleteLottery, GetLottery,UpdateLottery} from "../../../api/api";
-import Aux from "../../../hoc/Aux";
 import LotteryAddModal from "../../../components/UI/LotteryAddModal/LotteryAddModal";
 import {connect} from 'react-redux'
 const { Option } = Select;
@@ -150,7 +149,7 @@ class EditableTable extends React.Component {
                             </Popconfirm>
                         </span>
                     ) : (
-                        <Aux>
+                        <Fragment>
                             <a style={{marginRight: '10px'}} disabled={editingKey !== ''} onClick={() => this.edit(record.key)}>
                                 Edit
                             </a>
@@ -159,7 +158,7 @@ class EditableTable extends React.Component {
                                     Delete
                                 </a>
                             </Popconfirm>
-                        </Aux>
+                        </Fragment>
                     );
                 },
             },

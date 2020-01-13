@@ -1,8 +1,7 @@
 import {Table, Input, Popconfirm, Form, Button} from 'antd';
-import React from 'react'
+import React,{Fragment} from 'react'
 import DashboardBody from "../../../components/common/DashboardBody/DashboardBody";
 import {DeleteLocalClient,GetLocalClient,UpdateLocalClient} from "../../../api/api";
-import Aux from "../../../hoc/Aux";
 import {connect} from 'react-redux'
 import LocalClientAddModal from "../../../components/UI/LocalClientAddModal/LocalClientAddModal";
 const EditableContext = React.createContext();
@@ -144,7 +143,7 @@ class EditableTable extends React.Component {
                             </Popconfirm>
                         </span>
                     ) : (
-                        <Aux>
+                        <Fragment>
                             <a style={{marginRight: '10px'}} disabled={editingKey !== ''} onClick={() => this.edit(record.key)}>
                                 Edit
                             </a>
@@ -153,7 +152,7 @@ class EditableTable extends React.Component {
                                     Delete
                                 </a>
                             </Popconfirm>
-                        </Aux>
+                        </Fragment>
                     );
                 },
             },

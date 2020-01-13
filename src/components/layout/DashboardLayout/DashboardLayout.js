@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, {Component,Fragment} from 'react'
 import classes from './DashboardLayout.css'
 import new_pearl_logo from '../../../asserts/image/new_pearl_logo.png'
 import { Layout, Menu, Icon } from 'antd';
@@ -6,7 +6,7 @@ import {
     withRouter
 } from "react-router-dom";
 import {connect} from 'react-redux'
-import Aux from "../../../hoc/Aux";
+
 
 const DashboardLayout = (props) =>{
     const ClickHandler = (s) =>{
@@ -16,7 +16,7 @@ const DashboardLayout = (props) =>{
     const {Footer, Sider } = Layout;
     const {screens} = props.screens;
     return (
-        <Aux>
+        <Fragment>
             <Layout>
                 <Sider
                     style={{
@@ -64,7 +64,7 @@ const DashboardLayout = (props) =>{
                     <Footer style={{ textAlign: 'center' }}>Thriving Building Ltd ©{new Date().getFullYear()} Created by Oliver Deng</Footer>
                 </Layout>
             </Layout>
-        </Aux>
+        </Fragment>
     )
 };
 

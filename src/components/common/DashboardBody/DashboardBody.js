@@ -1,5 +1,4 @@
-import React,{Component} from 'react'
-import Aux from "../../../hoc/Aux";
+import React,{Component,Fragment} from 'react'
 import { Layout,Row,Col,Avatar,Icon,Menu,Dropdown } from 'antd';
 import classes from './DashboardBody.css'
 import LogoutModal from "../../UI/LogoutModal/LogoutModal";
@@ -42,7 +41,7 @@ class DashboardBody extends Component{
 
     render(){
         return (
-            <Aux>
+            <Fragment>
                 <Header style={{ background: '#fff'}} >
                             <h1 style={{float:"left",display:"inline-block"}}>{this.props.title}</h1>
                             <div style={{float:"right",display:"inline-block"}}>
@@ -60,7 +59,7 @@ class DashboardBody extends Component{
                     </div>
                 </Content>
                 <LogoutModal hideModal={this.hideLogoutModal} confirm={this.LogoutHandler} visible={this.state.logoutModalVisible}/>
-            </Aux>
+            </Fragment>
         )
     }
 }

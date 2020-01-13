@@ -1,9 +1,8 @@
-import React, {Component} from 'react'
+import React, {Component,Fragment} from 'react'
 import {GetStaff} from '../../../api/api'
 import DashboardBody from "../../../components/common/DashboardBody/DashboardBody";
 import {Descriptions, Spin} from 'antd'
 import classes from './StaffInfo.css'
-import Aux from "../../../hoc/Aux";
 import StaffEditModal from "../../../components/UI/StaffEditModal/StaffEditModal";
 import {connect} from 'react-redux'
 class StaffInfo extends Component{
@@ -88,7 +87,7 @@ class StaffInfo extends Component{
 
     render(){
         return (
-            <Aux>
+            <Fragment>
                 <DashboardBody title={this.props.name}>
                     <Spin style={{top:250}} tip="Loading..." spinning={this.state.isLoading}>
                         <div>
@@ -108,7 +107,7 @@ class StaffInfo extends Component{
                 </DashboardBody>
                 {/*有问题*/}
                 <StaffEditModal hideModalThenFetch={this.hideModalThenFetch} visible={this.state.modalVisible} hideModal={this.hideModal} values={this.state.propsToModal}/>
-            </Aux>
+            </Fragment>
         )
     }
 }
