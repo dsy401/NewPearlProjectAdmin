@@ -3,7 +3,7 @@ import React,{Component} from 'react'
 
 class DashboardRedirect extends Component{
     componentDidMount = () => {
-        this.props.history.push('/dashboard/lotterymanagement')
+        this.props.history.push('/dashboard/home')
     };
     render(){
         return (

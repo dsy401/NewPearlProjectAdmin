@@ -1,9 +1,9 @@
-import {Table, Input, InputNumber, Popconfirm, Form, Button, Select} from 'antd';
+import {Table, Input, Popconfirm, Form, Button, Select} from 'antd';
 import React from 'react'
 import DashboardBody from "../../../components/common/DashboardBody/DashboardBody";
 import {DeleteLottery, GetLottery,UpdateLottery} from "../../../api/api";
 import Aux from "../../../hoc/Aux";
-import LotteryAddModal from "../../../components/common/LotteryAddModal/LotteryAddModal";
+import LotteryAddModal from "../../../components/UI/LotteryAddModal/LotteryAddModal";
 import {connect} from 'react-redux'
 const { Option } = Select;
 const EditableContext = React.createContext();

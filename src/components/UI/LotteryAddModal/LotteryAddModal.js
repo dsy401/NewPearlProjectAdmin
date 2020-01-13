@@ -54,12 +54,12 @@ const AddLotteryForm = (props) =>{
                 )}
             </Form.Item>
             <Form.Item>
-                <Button key="back" onClick={props.closeModal}>
+                <Button key="back" style={{marginRight:"10px"}} onClick={props.closeModal}>
                     Cancel
-                </Button>,
+                </Button>
                 <Button htmlType="submit" type="primary" loading={props.isLoading}>
                     Submit
-                </Button>,
+                </Button>
             </Form.Item>
 
         </Form>
@@ -95,7 +95,7 @@ const LotteryAddModal = (props) =>{
     return (
         <Modal
             visible={props.visible}
-            title="Title"
+            title="Add Lottery"
             onOk={HandleOk}
             onCancel={props.closeModal}
             footer={[]}

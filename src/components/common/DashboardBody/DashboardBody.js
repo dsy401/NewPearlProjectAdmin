@@ -2,7 +2,7 @@ import React,{Component} from 'react'
 import Aux from "../../../hoc/Aux";
 import { Layout,Row,Col,Avatar,Icon,Menu,Dropdown } from 'antd';
 import classes from './DashboardBody.css'
-import LogoutModal from "../LogoutModal/LogoutModal";
+import LogoutModal from "../../UI/LogoutModal/LogoutModal";
 
 const { Header, Content } = Layout;
 
@@ -44,18 +44,15 @@ class DashboardBody extends Component{
         return (
             <Aux>
                 <Header style={{ background: '#fff'}} >
-                    <Row>
-                        <Col span={20}>
-                            <h1>{this.props.title}</h1>
-                        </Col>
-                        <Col span={4}>
-                            <Dropdown overlay={this.DropDownMenu} trigger={['click']}>
-                                <div className={classes.user}>
-                                    <Avatar icon="user" /> {localStorage.getItem("name")} <Icon type="down" />
-                                </div>
-                            </Dropdown>
-                        </Col>
-                    </Row>
+                            <h1 style={{float:"left",display:"inline-block"}}>{this.props.title}</h1>
+                            <div style={{float:"right",display:"inline-block"}}>
+                                <Dropdown overlay={this.DropDownMenu} trigger={['click']}>
+                                    <div className={classes.user}>
+                                        <Avatar icon="user" /> {localStorage.getItem("name")} <Icon type="down" />
+                                    </div>
+                                </Dropdown>
+                            </div>
+
                 </Header>
                 <Content style={{ margin: '24px 16px 0', overflow: 'initial' }}>
                     <div style={{ padding: 24, background: '#fff',minHeight:"82vh" }}>

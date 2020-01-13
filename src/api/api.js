@@ -79,4 +79,64 @@ export const TokenValidate = () =>{
             Authorization: ' Basic '+ Base64Encoder(localStorage.getItem('token'))
         }
     })
+};
+
+export const GetLocalClient = () =>{
+    return server({
+        url: url.GetLocalClient,
+        method: "GET",
+        headers: {
+            Authorization: ' Basic '+ Base64Encoder(localStorage.getItem('token'))
+        }
+    })
+}
+
+export const DeleteLocalClient =(id) =>{
+    return server({
+        url: url.DeleteLocalClient(id),
+        method: "DELETE",
+        headers: {
+            Authorization: ' Basic '+ Base64Encoder(localStorage.getItem('token'))
+        }
+    })
+}
+
+export const UpdateLocalClient = (id,data) =>{
+    return server({
+        url: url.UpdateLocalClient(id),
+        method: "PUT",
+        headers: {
+            Authorization: ' Basic '+ Base64Encoder(localStorage.getItem('token'))
+        },
+        data:data
+    })
+};
+
+export const AddLocalClient = (data) =>{
+    return server({
+        url: url.AddLocalClient,
+        method: "POST",
+        headers: {
+            Authorization: ' Basic '+ Base64Encoder(localStorage.getItem('token'))
+        },
+        data:data
+    })
+}
+
+export const GetStaff = () =>{
+    return server({
+        url: url.GetStaff,
+        method: "GET",
+    })
+};
+
+export const UpdateStaff = (id,data) =>{
+    return server({
+        url: url.UpdateStaff(id),
+        method: 'PUT',
+        headers: {
+            Authorization: ' Basic '+ Base64Encoder(localStorage.getItem('token'))
+        },
+        data:data
+    })
 }

@@ -21,7 +21,20 @@ const url = {
     DeleteWebClient: (id) =>{
         return HOST + 'api/contact/' + id
     },
-    TokenValidate: HOST + "api/token_validate"
+    TokenValidate: HOST + "api/token_validate",
+    GetLocalClient: HOST + 'api/local_client',
+    DeleteLocalClient: (id) =>{
+        return HOST + "api/local_client/" + id
+    },
+    UpdateLocalClient: (id) =>{
+        return HOST + "api/local_client/" + id
+    },
+    AddLocalClient: HOST + 'api/local_client',
+    GetStaff: HOST + 'api/staff',
+    UpdateStaff: (id) =>{
+        return HOST + 'api/staff/' + id
+    }
+
 };
 
 export default url

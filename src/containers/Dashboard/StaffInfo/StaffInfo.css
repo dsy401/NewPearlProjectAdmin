@@ -1,0 +1,12 @@
+.card{
+    border: #f0f2f5 1px solid;
+
+}
+
+.edit{
+    color: #1890ff;
+    cursor: pointer;
+}
+.edit:hover{
+    color: orange;
+}

@@ -11,9 +11,10 @@ import Aux from "../../../hoc/Aux";
 const DashboardLayout = (props) =>{
     const ClickHandler = (s) =>{
         props.history.push(s)
-    }
+    };
 
     const {Footer, Sider } = Layout;
+    const {screens} = props.screens
     return (
         <Aux>
             <Layout>
@@ -28,15 +29,33 @@ const DashboardLayout = (props) =>{
                     <div className={classes.logo}>
                         <img style={{width:"90%",height:"90%"}} src={new_pearl_logo} alt=""/>
                     </div>
-                    {/*这里问题*/}
-                    <Menu theme="dark" mode="inline" selectedKeys={[`${props.menuBarPos}`]}>
+
+                    <Menu theme="dark" mode="inline" defaultOpenKeys={['sub1','sub2']} selectedKeys={[`${props.menuBarPos}`]}>
                         {props.screens.map((s,i)=>{
-                            return (
-                                <Menu.Item key={i.toString()} onClick={()=>{ClickHandler(s.path)}}>
-                                    <Icon type={s.icon} />
-                                    <span className="nav-text">{s.name}</span>
-                                </Menu.Item>
-                            )
+                            if (s.items){
+                                return (
+                                    <Menu.SubMenu key={s.key} title={<span>
+                                        <Icon type={s.icon}/>
+                                        <span>{s.name}</span>
+                                    </span>}>
+                                        {s.items.map(q=>{
+                                            return (
+                                                <Menu.Item key={q.pos.toString()} onClick={()=>{ClickHandler(q.path)}}>
+                                                    <Icon type={q.icon} />
+                                                    <span className="nav-text">{q.name}</span>
+                                                </Menu.Item>
+                                            )
+                                        })}
+                                    </Menu.SubMenu>
+                                )
+                            }else{
+                                return (
+                                    <Menu.Item key={s.pos.toString()} onClick={()=>{ClickHandler(s.path)}}>
+                                        <Icon type={s.icon} />
+                                        <span className="nav-text">{s.name}</span>
+                                    </Menu.Item>
+                                )
+                            }
                         })}
                     </Menu>
                 </Sider>
