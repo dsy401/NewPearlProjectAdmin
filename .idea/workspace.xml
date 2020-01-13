@@ -2,28 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6147ab0d-39d3-4044-922e-9c4e28734021" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Route/DashboardRoute.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/UI/LocalClientAddModal/LocalClientAddModal.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/UI/StaffEditModal/StaffEditModal.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/containers/Dashboard/StaffInfo/StaffInfo.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/containers/Dashboard/StaffInfo/StaffInfo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/actions/StaffInfoAction.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/actions/localClientAction.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/reducers/StaffInfoReducer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/reducers/localClientReducer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/config.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/containers/Dashboard/Brand/Brand.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/containers/Dashboard/Brand/Brand.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/containers/Dashboard/CompanyDescription/CompanyDescription.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Route/DashboardRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Route/DashboardRoute.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/api.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/serverAPI.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/serverAPI.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/DashboardBody/DashboardBody.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/DashboardBody/DashboardBody.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/LogoutModal/LogoutModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/LogoutModal/LogoutModal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/LotteryAddModal/LotteryAddModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/LotteryAddModal/LotteryAddModal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UI/StaffEditModal/StaffEditModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/StaffEditModal/StaffEditModal.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/layout/DashboardLayout/DashboardLayout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/layout/DashboardLayout/DashboardLayout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/404/NotFound.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/404/NotFound.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/Dashboard/Dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Dashboard/Dashboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/Dashboard/DashboardRedirect/DashboardRedirect.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Dashboard/DashboardRedirect/DashboardRedirect.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/Dashboard/LocalClient/LocalClient.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Dashboard/LocalClient/LocalClient.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/Dashboard/LotteryManagement/LotteryManagement.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Dashboard/LotteryManagement/LotteryManagement.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/reducers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reducers/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/Dashboard/StaffInfo/StaffInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Dashboard/StaffInfo/StaffInfo.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,8 +24,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -106,7 +97,8 @@
       <workItem from="1578548282869" duration="1137000" />
       <workItem from="1578550793717" duration="28999000" />
       <workItem from="1578638894119" duration="6949000" />
-      <workItem from="1578862772806" duration="25199000" />
+      <workItem from="1578862772806" duration="25304000" />
+      <workItem from="1578946815662" duration="10813000" />
     </task>
     <servers />
   </component>
@@ -158,10 +150,10 @@
     </state>
     <state x="-1281" y="229" width="670" height="675" key="run.anything.popup/-1920.23.1920.979/0.23.1680.1027@-1920.23.1920.979" timestamp="1578878384912" />
     <state x="-1281" y="229" key="run.anything.popup/-1920.23.1920.980/0.23.1680.1027@-1920.23.1920.980" timestamp="1578545818964" />
-    <state x="-1281" y="232" width="670" height="676" key="search.everywhere.popup" timestamp="1578872560963">
+    <state x="-1281" y="232" width="670" height="676" key="search.everywhere.popup" timestamp="1578951283632">
       <screen x="-1920" y="23" width="1920" height="979" />
     </state>
-    <state x="-1281" y="232" width="670" height="676" key="search.everywhere.popup/-1920.23.1920.979/0.23.1680.1027@-1920.23.1920.979" timestamp="1578872560963" />
+    <state x="-1281" y="232" width="670" height="676" key="search.everywhere.popup/-1920.23.1920.979/0.23.1680.1027@-1920.23.1920.979" timestamp="1578951283632" />
     <state x="2319" y="249" width="670" height="730" key="search.everywhere.popup/1680.23.1920.1057/0.23.1680.956@1680.23.1920.1057" timestamp="1578721254348" />
   </component>
 </project>

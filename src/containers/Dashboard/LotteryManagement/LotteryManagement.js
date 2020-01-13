@@ -59,6 +59,14 @@ class EditableCell extends React.Component {
 }
 
 class EditableTable extends React.Component {
+
+    componentWillUnmount =()=> {
+        this.setState = (state) =>{
+            return;
+        }
+    }
+
+
     componentDidMount() {
         this.setState({
             loading: true

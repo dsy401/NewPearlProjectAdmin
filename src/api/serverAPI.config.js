@@ -3,9 +3,9 @@
  *统一定义接口，有利于维护
  *
  **/
+import config from '../config'
 
-
-const HOST = 'http://localhost:5000/';
+const HOST = config.Host;
 
 const url = {
     Login: HOST + 'api/login',
@@ -33,7 +33,8 @@ const url = {
     GetStaff: HOST + 'api/staff',
     UpdateStaff: (id) =>{
         return HOST + 'api/staff/' + id
-    }
+    },
+    GetBrands: HOST + 'api/brand'
 
 };
 

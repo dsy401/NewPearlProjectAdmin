@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {GetStaff} from '../../../api/api'
 import DashboardBody from "../../../components/common/DashboardBody/DashboardBody";
-import {Descriptions,Spin} from 'antd'
+import {Descriptions, Spin} from 'antd'
 import classes from './StaffInfo.css'
 import Aux from "../../../hoc/Aux";
 import StaffEditModal from "../../../components/UI/StaffEditModal/StaffEditModal";
@@ -24,6 +24,12 @@ class StaffInfo extends Component{
     componentDidMount = () =>{
         this.FetchStaff()
     };
+
+    componentWillUnmount = ()=> {
+        this.setState = (state) =>{
+            return;
+        }
+    }
 
     UNSAFE_componentWillReceiveProps(nextProps) {
         if (nextProps.StaffInfoData !== this.props.StaffInfoData){
@@ -48,6 +54,7 @@ class StaffInfo extends Component{
     }
 
     openModal = (obj) =>{
+        console.log(obj._id)
         this.setState({
             propsToModal: {
                 name: obj.name,
@@ -58,7 +65,6 @@ class StaffInfo extends Component{
                 id: obj._id.$oid
             }
         },()=>{
-            console.log(this.state.propsToModal)
             this.setState({
                 modalVisible: true
             })
@@ -69,6 +75,14 @@ class StaffInfo extends Component{
             this.setState({
                 modalVisible: false
             })
+    }
+
+    hideModalThenFetch= () =>{
+        this.setState({
+            modalVisible: false
+        },()=>{
+            this.FetchStaff()
+        })
     }
 
 
@@ -93,7 +107,7 @@ class StaffInfo extends Component{
                     </Spin>
                 </DashboardBody>
                 {/*有问题*/}
-                <StaffEditModal visible={this.state.modalVisible} hideModal={this.hideModal} values={this.state.propsToModal}/>
+                <StaffEditModal hideModalThenFetch={this.hideModalThenFetch} visible={this.state.modalVisible} hideModal={this.hideModal} values={this.state.propsToModal}/>
             </Aux>
         )
     }

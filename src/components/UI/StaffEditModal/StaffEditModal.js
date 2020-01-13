@@ -6,10 +6,16 @@ import {connect} from 'react-redux'
 const StaffEditModal = Form.create({name:"staff_modal_form"})(
     class extends Component{
 
+        UNSAFE_componentWillReceiveProps = (nextProps) => {
+            if (nextProps.values !== this.props.values){
+                this.props.form.resetFields();
+            }
+        };
+
         state={
             wechatFileList:[],
             imageFileList:[],
-            isLoading:false
+            isLoading:false,
         };
 
         wechatFile = e => {
@@ -46,10 +52,10 @@ const StaffEditModal = Form.create({name:"staff_modal_form"})(
                     this.setState({isLoading:true})
                     UpdateStaff(this.props.values.id,fdata).then(res=>{
                         this.setState({isLoading:false},()=>{
-
+                            this.props.hideModalThenFetch()
                         })
                     }).catch(err=>{
-                        this.setState({isLoading:false})
+                        this.setState({isLoading:false});
                         console.log(err)
                     })
                 }
@@ -78,7 +84,7 @@ const StaffEditModal = Form.create({name:"staff_modal_form"})(
                         <Form.Item  label="职位">
                             {getFieldDecorator('role_cn',{
                                 initialValue: this.props.values.role_cn
-                            })(<Input defaultValue={this.props.values.role_cn} type="textarea" />)}
+                            })(<Input type="textarea" />)}
                         </Form.Item>
                         <Form.Item label="facebook">
                             {getFieldDecorator('facebook',{

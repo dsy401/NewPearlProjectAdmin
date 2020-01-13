@@ -3,6 +3,8 @@ import LotteryManagement from "../containers/Dashboard/LotteryManagement/Lottery
 import WebClient from "../containers/Dashboard/WebClient/WebClient";
 import LocalClient from "../containers/Dashboard/LocalClient/LocalClient";
 import StaffInfo from "../containers/Dashboard/StaffInfo/StaffInfo";
+import CompanyDescription from "../containers/Dashboard/CompanyDescription/CompanyDescription";
+import Brand from "../containers/Dashboard/Brand/Brand";
 
 const match = "/dashboard";
 export const DashboardRoute = [
@@ -35,6 +37,18 @@ export const DashboardRoute = [
         component: StaffInfo,
         path: match +"/staffinfo",
         pos:4
+    },
+    {
+        name: "Company Description",
+        component: CompanyDescription,
+        path: match +"/companydescription",
+        pos:5
+    },
+    {
+        name: "Brand",
+        component: Brand,
+        path: match +"/brand",
+        pos:6
     }
 ];
 
@@ -71,6 +85,20 @@ export const menu = [
                 icon: "user",
                 path: match +"/staffinfo",
                 pos:4
+            },
+            {
+                name: "Company Description",
+                component: CompanyDescription,
+                icon: "user",
+                path: match +"/companydescription",
+                pos:5
+            },
+            {
+                name: "Brand",
+                component: Brand,
+                icon: "user",
+                path: match +"/brand",
+                pos:6
             }
         ]
     },

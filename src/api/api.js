@@ -140,3 +140,10 @@ export const UpdateStaff = (id,data) =>{
         data:data
     })
 }
+
+export const GetBrands = () =>{
+    return server({
+        url: url.GetBrands,
+        method:"GET",
+    })
+}

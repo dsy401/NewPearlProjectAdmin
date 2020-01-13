@@ -75,6 +75,12 @@ class EditableTable extends React.Component {
 
     }
 
+    componentWillUnmount = () => {
+        this.setState = (state) =>{
+            return;
+        }
+    }
+
     UNSAFE_componentWillReceiveProps(nextProps) {
         if (nextProps.localClientData !== this.props.localClientData){
             this.setState({
