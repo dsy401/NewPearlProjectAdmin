@@ -1,7 +1,8 @@
 import React,{Component} from 'react'
 import {Modal,Form,Input,Upload,Icon,Button} from 'antd'
-
-
+import {PostBrands} from '../../../api/api'
+import {connect} from 'react-redux'
+import {SetData} from "../../../redux/actions/BrandAction";
 
 const BrandAddModal = Form.create({name:"brand_add_modal"})(
     class extends Component{
@@ -24,10 +25,25 @@ const BrandAddModal = Form.create({name:"brand_add_modal"})(
 
 
         HandlerSubmit = (e)=>{
-            e.preventDefault()
+            e.preventDefault();
             this.props.form.validateFields((err, values) => {
                 if (!err){
-                    console.log(values)
+                    let fdata = new FormData()
+                    fdata.append('name',values.name)
+                    fdata.append('name_cn',values.name_cn)
+                    fdata.append('description',values.description)
+                    fdata.append('description_cn',values.description_cn)
+
+                    this.setState({isLoading:true})
+                    PostBrands(fdata).then(res=>{
+                        this.setState({isLoading:false},()=>{
+                            this.props.hideModal()
+                            this.props.SetData(res.data)
+                        })
+                    }).catch(err=>{
+                        console.log(err);
+                        this.setState({isLoading:false})
+                    })
                 }
             })
         };
@@ -85,7 +101,21 @@ const BrandAddModal = Form.create({name:"brand_add_modal"})(
     }
 );
 
-export default BrandAddModal
+const mapStateToProps = state => {
+    return {
+        BrandData: state.BrandReducer
+    }
+};
+
+const mapDispatchToProps = dispatch => {
+    return {
+        SetData: (value) =>{
+            dispatch(SetData(value))
+        }
+    }
+};
+
+export default connect(mapStateToProps,mapDispatchToProps)(BrandAddModal)
 
 
 

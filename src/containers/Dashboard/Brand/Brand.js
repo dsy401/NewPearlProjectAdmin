@@ -4,7 +4,8 @@ import {Card, Row, Col, Spin} from 'antd'
 import classes from './Brand.css'
 import {GetBrands} from '../../../api/api'
 import BrandAddModal from "../../../components/UI/BrandAddModal/BrandAddModal";
-const Host = "http://localhost:5000";
+import {connect} from 'react-redux'
+import config from '../../../config'
 
 class Brand extends Component{
 
@@ -12,23 +13,31 @@ class Brand extends Component{
         data: [],
         isLoading: false,
         AddModalVisible: false
-    }
+    };
 
     componentDidMount = () =>{
         this.FetchBrands()
     };
 
+    UNSAFE_componentWillReceiveProps = (nextProps) =>{
+        if (this.props.BrandData !== nextProps.BrandData){
+            this.setState({
+                data: nextProps.BrandData
+            })
+        }
+    }
+
     OpenAddModal = () =>{
         this.setState({
             AddModalVisible: true
         })
-    }
+    };
 
     hideAddModal = () =>{
         this.setState({
             AddModalVisible: false
         })
-    }
+    };
 
     FetchBrands = () =>{
         this.setState({isLoading:true})
@@ -61,7 +70,7 @@ class Brand extends Component{
                                     <Col span={8}>
                                         <Card
                                             title={s.name}  style={{ width: 300 }} extra={<a>Edit</a>}>
-                                            <img style={{width:"100%",height:"150px"}} alt="" src={`${Host}${s.image}`}/>
+                                            <img style={{width:"100%",height:"150px"}} alt="" src={`${config.Host}${s.image}`}/>
                                         </Card>
                                     </Col>
 
@@ -79,4 +88,11 @@ class Brand extends Component{
     }
 }
 
-export default Brand
+const mapStateToProps = state => {
+    return {
+        BrandData: state.BrandReducer
+    }
+};
+
+
+export default connect(mapStateToProps)(Brand)

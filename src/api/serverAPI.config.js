@@ -8,33 +8,34 @@ import config from '../config'
 const HOST = config.Host;
 
 const url = {
-    Login: HOST + 'api/login',
-    GetLottery: HOST + 'api/lottery',
+    Login: HOST + '/api/login',
+    GetLottery: HOST + '/api/lottery',
     DeleteLottery: (id)=>{
-        return HOST + 'api/lottery/' +id
+        return HOST + '/api/lottery/' +id
     },
-    AddLottery: HOST + 'api/lottery',
+    AddLottery: HOST + '/api/lottery',
     UpdateLottery: (id) =>{
-        return HOST + 'api/lottery/' +id
+        return HOST + '/api/lottery/' +id
     },
-    GetWebClient: HOST + 'api/contact',
+    GetWebClient: HOST + '/api/contact',
     DeleteWebClient: (id) =>{
-        return HOST + 'api/contact/' + id
+        return HOST + '/api/contact/' + id
     },
-    TokenValidate: HOST + "api/token_validate",
-    GetLocalClient: HOST + 'api/local_client',
+    TokenValidate: HOST + "/api/token_validate",
+    GetLocalClient: HOST + '/api/local_client',
     DeleteLocalClient: (id) =>{
-        return HOST + "api/local_client/" + id
+        return HOST + "/api/local_client/" + id
     },
     UpdateLocalClient: (id) =>{
-        return HOST + "api/local_client/" + id
+        return HOST + "/api/local_client/" + id
     },
-    AddLocalClient: HOST + 'api/local_client',
-    GetStaff: HOST + 'api/staff',
+    AddLocalClient: HOST + '/api/local_client',
+    GetStaff: HOST + '/api/staff',
     UpdateStaff: (id) =>{
-        return HOST + 'api/staff/' + id
+        return HOST + '/api/staff/' + id
     },
-    GetBrands: HOST + 'api/brand'
+    GetBrands: HOST + '/api/brand',
+    PostBrands: HOST + '/api/brand'
 
 };
 

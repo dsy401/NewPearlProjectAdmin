@@ -146,4 +146,15 @@ export const GetBrands = () =>{
         url: url.GetBrands,
         method:"GET",
     })
+};
+
+export const PostBrands = (data) =>{
+    return server({
+        headers: {
+            Authorization: ' Basic '+ Base64Encoder(localStorage.getItem('token'))
+        },
+        url: url.PostBrands,
+        method: "POST",
+        data: data
+    })
 }

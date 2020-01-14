@@ -1,7 +1,7 @@
 .add{
     border: 1px solid;
     width: 300px;
-    height: 200px;
+    height: 260px;
     color: #ccc;
     transition: color .25s;
     position: relative;

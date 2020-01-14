@@ -174,7 +174,7 @@ class EditableTable extends React.Component {
                 this.setState({
                     data: res.data.map((s)=>{
                         return (
-                            {name: s.name, phone:s.phone, gender: s.gender,key: s._id.$oid_id}
+                            {name: s.name, phone:s.phone, gender: s.gender,key: s._id.$oid}
                         )
                     })
                 })
