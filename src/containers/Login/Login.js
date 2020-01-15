@@ -8,7 +8,7 @@ class LoginForm extends Component{
 
     constructor(props) {
         super(props);
-        const token = localStorage.getItem("token")
+        const token = localStorage.getItem("token");
         if (token){
             window.location = '/dashboard'
         }
@@ -43,6 +43,7 @@ class LoginForm extends Component{
                 Login(formData).then(res=>{
                     localStorage.setItem("token", res.data.token)
                     localStorage.setItem("name", res.data.user_name)
+                    localStorage.setItem('user_id',res.data.user_id)
                     window.location = '/dashboard'
                 }).catch(error=>{
                     alert(error.error_message)

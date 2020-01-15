@@ -6,6 +6,7 @@ import StaffInfo from "../containers/Dashboard/StaffInfo/StaffInfo";
 import CompanyDescription from "../containers/Dashboard/CompanyDescription/CompanyDescription";
 import Brand from "../containers/Dashboard/Brand/Brand";
 import Product from "../containers/Dashboard/Product/Product";
+import ChangePassword from "../containers/Dashboard/ChangePassword/ChangePassword";
 
 const match = "/dashboard";
 export const DashboardRoute = [
@@ -56,6 +57,12 @@ export const DashboardRoute = [
         component: Product,
         path: match + "/product",
         pos: 7
+    },
+    {
+        name: "Change Password",
+        component: ChangePassword,
+        path: match + '/changepassword',
+        pos: null,
     }
 ];
 

@@ -2,18 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6147ab0d-39d3-4044-922e-9c4e28734021" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/containers/Dashboard/Product/Product.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/containers/Dashboard/Product/Product.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/actions/ProductCategoryAction.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/reducers/ProductCategoryReducer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/containers/Dashboard/ChangePassword/ChangePassword.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Route/DashboardRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Route/DashboardRoute.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/serverAPI.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/serverAPI.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UI/StaffEditModal/StaffEditModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/StaffEditModal/StaffEditModal.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/common/DashboardBody/DashboardBody.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/DashboardBody/DashboardBody.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/Dashboard/Brand/Brand.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Dashboard/Brand/Brand.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/Dashboard/Product/Product.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Dashboard/Product/Product.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/Dashboard/StaffInfo/StaffInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Dashboard/StaffInfo/StaffInfo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/reducers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reducers/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/Login/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Login/Login.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,8 +19,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -100,7 +96,7 @@
       <workItem from="1578946815662" duration="14603000" />
       <workItem from="1578964926628" duration="4994000" />
       <workItem from="1578973607235" duration="618000" />
-      <workItem from="1579042904170" duration="16454000" />
+      <workItem from="1579042904170" duration="18497000" />
     </task>
     <servers />
   </component>

@@ -1,5 +1,6 @@
 import React,{Component,Fragment} from 'react'
 import { Layout,Row,Col,Avatar,Icon,Menu,Dropdown } from 'antd';
+import {withRouter} from 'react-router-dom'
 import classes from './DashboardBody.css'
 import LogoutModal from "../../UI/LogoutModal/LogoutModal";
 
@@ -20,7 +21,7 @@ class DashboardBody extends Component{
     DropDownMenu = (
         <Menu>
             <Menu.Item key="0">
-                <a>Change Password</a>
+                <a onClick={()=>{this.props.history.push('/dashboard/changepassword')}}>Change Password</a>
             </Menu.Item>
             <Menu.Divider />
             <Menu.Item key="3" onClick={this.openLogoutModal}>Log Out</Menu.Item>
@@ -64,4 +65,4 @@ class DashboardBody extends Component{
     }
 }
 
-export default DashboardBody
+export default withRouter(DashboardBody)

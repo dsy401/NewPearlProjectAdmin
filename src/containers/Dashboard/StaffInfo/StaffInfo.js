@@ -100,7 +100,9 @@ class StaffInfo extends Component{
                                         <Descriptions  style={{paddingBottom:"10px",margin:10}} title={s.name} size='default'>
                                             <Descriptions.Item label="Role">{s.role}</Descriptions.Item>
                                             <Descriptions.Item label="职位">{s.role_cn}</Descriptions.Item>
-                                            <Descriptions.Item label=""><div className={classes.edit} onClick={()=>{this.openModal(s)}}>Edit</div></Descriptions.Item>
+                                            <Descriptions.Item label="Operation"><div className={classes.edit} onClick={()=>{this.openModal(s)}}>Edit</div></Descriptions.Item>
+                                            <Descriptions.Item label="image"><a href={s.image}><img width={100} height={100} src={s.image} /></a></Descriptions.Item>
+                                            <Descriptions.Item label="wechat"><a href={s.wechat}><img width={100} height={100} src={s.wechat} /></a></Descriptions.Item>
                                         </Descriptions>
                                     </div>
                                 )

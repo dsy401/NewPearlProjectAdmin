@@ -5,7 +5,7 @@ import classes from './Brand.css'
 import {GetBrands} from '../../../api/api'
 import BrandAddModal from "../../../components/UI/BrandAddModal/BrandAddModal";
 import {connect} from 'react-redux'
-import config from '../../../config'
+
 
 class Brand extends Component{
 
@@ -70,7 +70,7 @@ class Brand extends Component{
                                     <Col span={8}>
                                         <Card
                                             title={s.name}  style={{ width: 300 }} extra={<a>Edit</a>}>
-                                            <img style={{width:"100%",height:"150px"}} alt="" src={`${config.Host}${s.image}`}/>
+                                            <img style={{width:"100%",height:"150px"}} alt="" src={`${s.image}`}/>
                                         </Card>
                                     </Col>
 

@@ -3,8 +3,6 @@ import DashboardBody from "../../../components/common/DashboardBody/DashboardBod
 import {connect} from 'react-redux'
 import {FetchProductCategory} from "../../../redux/actions/ProductCategoryAction";
 import {Card, Col, Row, Spin} from "antd";
-import config from "../../../config";
-import classes from "../Product/Product.css";
 class Product extends Component{
 
 
@@ -29,7 +27,7 @@ class Product extends Component{
                                     <Col span={8}>
                                         <Card
                                             title={s.name}  style={{ width: 300 }} extra={<a>Edit</a>}>
-                                            <img style={{width:"100%",height:"150px"}} alt="" src={`${config.Host}${s.image}`}/>
+                                            <img style={{width:"100%",height:"150px"}} alt="" src={`${s.image}`}/>
                                         </Card>
                                     </Col>
                                 )
