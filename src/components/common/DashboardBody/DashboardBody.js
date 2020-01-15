@@ -20,7 +20,7 @@ class DashboardBody extends Component{
     DropDownMenu = (
         <Menu>
             <Menu.Item key="0">
-                <a>Setting</a>
+                <a>Change Password</a>
             </Menu.Item>
             <Menu.Divider />
             <Menu.Item key="3" onClick={this.openLogoutModal}>Log Out</Menu.Item>

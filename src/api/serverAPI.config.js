@@ -35,8 +35,9 @@ const url = {
         return HOST + '/api/staff/' + id
     },
     GetBrands: HOST + '/api/brand',
-    PostBrands: HOST + '/api/brand'
-
+    PostBrands: HOST + '/api/brand',
+    GetProductCategory: HOST + '/api/product_category',
+    UploadImage: HOST +'/api/upload_image'
 };
 
 export default url

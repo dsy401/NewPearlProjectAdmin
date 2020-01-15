@@ -17,7 +17,7 @@ export const GetLottery = () =>{
         url: url.GetLottery,
         method: 'GET',
     })
-}
+};
 
 export const DeleteLottery = (id) =>{
     return server({
@@ -89,7 +89,7 @@ export const GetLocalClient = () =>{
             Authorization: ' Basic '+ Base64Encoder(localStorage.getItem('token'))
         }
     })
-}
+};
 
 export const DeleteLocalClient =(id) =>{
     return server({
@@ -121,7 +121,7 @@ export const AddLocalClient = (data) =>{
         },
         data:data
     })
-}
+};
 
 export const GetStaff = () =>{
     return server({
@@ -139,7 +139,7 @@ export const UpdateStaff = (id,data) =>{
         },
         data:data
     })
-}
+};
 
 export const GetBrands = () =>{
     return server({
@@ -157,4 +157,15 @@ export const PostBrands = (data) =>{
         method: "POST",
         data: data
     })
+};
+
+export const GetProductCategory = () =>{
+    return server({
+        method: "GET",
+        url: url.GetProductCategory
+    })
+};
+
+export const UploadImage = () =>{
+    return url.UploadImage
 }

@@ -15,7 +15,9 @@ class StaffInfo extends Component{
             role_cn:"",
             facebook:"",
             linkedin: "",
-            id:""
+            id:"",
+            wechat: "",
+            image: "",
         },
         isLoading:false
     };
@@ -53,14 +55,15 @@ class StaffInfo extends Component{
     }
 
     openModal = (obj) =>{
-        console.log(obj._id)
         this.setState({
             propsToModal: {
                 name: obj.name,
                 role: obj.role,
                 role_cn:obj.role_cn,
-                facebook: obj.face,
+                facebook: obj.facebook,
                 linkedin: obj.linkedin,
+                wechat: obj.wechat,
+                image: obj.image,
                 id: obj._id.$oid
             }
         },()=>{

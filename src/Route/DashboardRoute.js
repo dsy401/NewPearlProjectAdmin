@@ -5,6 +5,7 @@ import LocalClient from "../containers/Dashboard/LocalClient/LocalClient";
 import StaffInfo from "../containers/Dashboard/StaffInfo/StaffInfo";
 import CompanyDescription from "../containers/Dashboard/CompanyDescription/CompanyDescription";
 import Brand from "../containers/Dashboard/Brand/Brand";
+import Product from "../containers/Dashboard/Product/Product";
 
 const match = "/dashboard";
 export const DashboardRoute = [
@@ -49,6 +50,12 @@ export const DashboardRoute = [
         component: Brand,
         path: match +"/brand",
         pos:6
+    },
+    {
+        name: "Product",
+        component: Product,
+        path: match + "/product",
+        pos: 7
     }
 ];
 
@@ -87,7 +94,7 @@ export const menu = [
                 pos:4
             },
             {
-                name: "Company Description",
+                name: "About",
                 component: CompanyDescription,
                 icon: "user",
                 path: match +"/companydescription",
@@ -99,6 +106,13 @@ export const menu = [
                 icon: "user",
                 path: match +"/brand",
                 pos:6
+            },
+            {
+                name: "Product",
+                component: Product,
+                icon: "user",
+                path: match + "/product",
+                pos: 7
             }
         ]
     },
