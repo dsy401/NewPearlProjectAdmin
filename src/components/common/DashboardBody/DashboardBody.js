@@ -44,14 +44,14 @@ class DashboardBody extends Component{
         return (
             <Fragment>
                 <Header style={{ background: '#fff'}} >
-                            <h1 style={{float:"left",display:"inline-block"}}>{this.props.title}</h1>
-                            <div style={{float:"right",display:"inline-block"}}>
-                                <Dropdown overlay={this.DropDownMenu} trigger={['click']}>
-                                    <div className={classes.user}>
-                                        <Avatar icon="user" /> {localStorage.getItem("name")} <Icon type="down" />
-                                    </div>
-                                </Dropdown>
+                    <h1 style={{float:"left",display:"inline-block"}}>{this.props.title}</h1>
+                    <div style={{float:"right",display:"inline-block"}}>
+                        <Dropdown overlay={this.DropDownMenu} trigger={['click']}>
+                            <div className={classes.user}>
+                                <Avatar icon="user" /> {localStorage.getItem("name")} <Icon type="down" />
                             </div>
+                        </Dropdown>
+                    </div>
 
                 </Header>
                 <Content style={{ margin: '24px 16px 0', overflow: 'initial' }}>

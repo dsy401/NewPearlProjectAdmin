@@ -1,4 +1,4 @@
-import {GetProductCategory} from '../../api/api'
+import {GetProductCategory,UpdateProductCategory} from '../../api/api'
 export const FetchProductCategory = () =>{
     return (dispatch)=>{
         dispatch({
@@ -18,3 +18,24 @@ export const FetchProductCategory = () =>{
         })
     }
 }
+
+export const UpdateAndFetchProductCategory = (id,data,cb) =>{
+    return dispatch=>{
+        dispatch({
+            type: "BeforeFetchData"
+        });
+        UpdateProductCategory(id,data).then(res=>{
+            dispatch({
+                type: "FetchDataSuccess",
+                payload: res.data
+            })
+
+            cb()
+        }).catch(err=>{
+            console.log(err)
+            dispatch({
+                type: "FetchDataFail"
+            })
+        })
+    }
+};

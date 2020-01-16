@@ -50,7 +50,6 @@ const StaffEditModal = Form.create({name:"staff_modal_form"})(
             e.preventDefault()
             this.props.form.validateFields((err, values) => {
                 if (!err){
-                    console.log(values)
                     let fdata = new FormData()
                     fdata.append('role',values.role)
                     fdata.append('role_cn',values.role_cn)
@@ -118,19 +117,6 @@ const StaffEditModal = Form.create({name:"staff_modal_form"})(
                                 initialValue: this.props.values.linkedin
                             })(<Input  />)}
                         </Form.Item>
-                        <Form.Item label="wechat">
-                            {getFieldDecorator('wechat', {
-                                valuePropName: 'wechat',
-                                getValueFromEvent: this.wechatFile,
-                                initialValue: []
-                            })(
-                                <Upload action={UploadImage} name="image" listType="picture">
-                                    {this.state.wechatFileList.length===0?(<Button>
-                                        <Icon type="upload" /> Click to upload
-                                    </Button>):null}
-                                </Upload>,
-                            )}
-                        </Form.Item>
                         <Form.Item label="image">
                             {getFieldDecorator('image', {
                                 valuePropName: 'image',
@@ -139,6 +125,19 @@ const StaffEditModal = Form.create({name:"staff_modal_form"})(
                             })(
                                 <Upload action={UploadImage} name="image" listType="picture">
                                     {this.state.imageFileList.length===0?(<Button>
+                                        <Icon type="upload" /> Click to upload
+                                    </Button>):null}
+                                </Upload>,
+                            )}
+                        </Form.Item>
+                        <Form.Item label="wechat">
+                            {getFieldDecorator('wechat', {
+                                valuePropName: 'wechat',
+                                getValueFromEvent: this.wechatFile,
+                                initialValue: []
+                            })(
+                                <Upload action={UploadImage} name="image" listType="picture">
+                                    {this.state.wechatFileList.length===0?(<Button>
                                         <Icon type="upload" /> Click to upload
                                     </Button>):null}
                                 </Upload>,

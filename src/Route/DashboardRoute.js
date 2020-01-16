@@ -5,8 +5,9 @@ import LocalClient from "../containers/Dashboard/LocalClient/LocalClient";
 import StaffInfo from "../containers/Dashboard/StaffInfo/StaffInfo";
 import CompanyDescription from "../containers/Dashboard/CompanyDescription/CompanyDescription";
 import Brand from "../containers/Dashboard/Brand/Brand";
-import Product from "../containers/Dashboard/Product/Product";
+import ProductCategory from "../containers/Dashboard/ProductCategory/ProductCategory";
 import ChangePassword from "../containers/Dashboard/ChangePassword/ChangePassword";
+import Product from "../containers/Dashboard/Product/Product";
 
 const match = "/dashboard";
 export const DashboardRoute = [
@@ -53,9 +54,9 @@ export const DashboardRoute = [
         pos:6
     },
     {
-        name: "Product",
-        component: Product,
-        path: match + "/product",
+        name: "Product Category",
+        component: ProductCategory,
+        path: match + "/productcategory",
         pos: 7
     },
     {
@@ -63,6 +64,12 @@ export const DashboardRoute = [
         component: ChangePassword,
         path: match + '/changepassword',
         pos: null,
+    },
+    {
+        name: "Product",
+        component: Product,
+        path: match + "/product/:productCategoryId",
+        pos:null
     }
 ];
 
@@ -70,62 +77,62 @@ export const menu = [
     {
         name: "Home",
         component: Home,
-        icon: "user",
+        icon: "home",
         path: match +"/home",
         pos:0
     },
     {
         name: "Lottery Management",
         component: LotteryManagement,
-        icon: "user",
+        icon: "smile",
         path: match +"/lotterymanagement",
         pos:1
     },
     {
         name: "Web Management",
-        icon: "user",
+        icon: "global",
         key: "sub1",
         items: [
             {
                 name: "Web Client",
                 component: WebClient,
-                icon: "user",
+                icon: "contacts",
                 path: match +"/webclient",
                 pos:2
             },
             {
                 name: "Staff Info",
                 component: StaffInfo,
-                icon: "user",
+                icon: "team",
                 path: match +"/staffinfo",
                 pos:4
             },
             {
                 name: "About",
                 component: CompanyDescription,
-                icon: "user",
+                icon: "info",
                 path: match +"/companydescription",
                 pos:5
             },
             {
                 name: "Brand",
                 component: Brand,
-                icon: "user",
+                icon: "folder",
                 path: match +"/brand",
                 pos:6
             },
             {
                 name: "Product",
-                component: Product,
-                icon: "user",
-                path: match + "/product",
+                component: ProductCategory,
+                icon: "shop",
+                path: match + "/productcategory",
                 pos: 7
             }
         ]
     },
     {
         name: "Local Management",
-        icon: "user",
+        icon: "calendar",
         key: "sub2",
         items:[
             {

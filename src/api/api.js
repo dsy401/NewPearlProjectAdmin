@@ -169,3 +169,42 @@ export const GetProductCategory = () =>{
 export const UploadImage = () =>{
     return url.UploadImage
 }
+
+export const UpdateProductCategory = (id,data) =>{
+    return server({
+        method: "PUT",
+        url: url.UpdateProductCategory(id),
+        data: data,
+        headers: {
+            Authorization: ' Basic '+ Base64Encoder(localStorage.getItem('token'))
+        }
+    })
+};
+
+export const FirstProductCategory = (id) =>{
+    return server({
+        method:"GET",
+        url: url.FirstProductCategory(id),
+    })
+};
+
+export const DeleteBrand = (id) =>{
+    return server({
+        method: 'DELETE',
+        url: url.DeleteBrand(id),
+        headers: {
+            Authorization: ' Basic '+ Base64Encoder(localStorage.getItem('token'))
+        }
+    })
+};
+
+export const UpdateBrand = (id,data) =>{
+    return server({
+        method: "PUT",
+        url: url.UpdateBrand(id),
+        headers: {
+            Authorization: ' Basic '+ Base64Encoder(localStorage.getItem('token'))
+        },
+        data:data
+    })
+}

@@ -2,7 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6147ab0d-39d3-4044-922e-9c4e28734021" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/UI/BrandDeleteModal/BrandDeleteModal.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/UI/BrandEditModal/BrandEditModal.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/UI/ProductCategoryEditModal/ProductCategoryEditModal.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/graph/BarGraph.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/graph/TimeLineGraph.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/containers/Dashboard/ProductCategory/ProductCategory.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Route/DashboardRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Route/DashboardRoute.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/serverAPI.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/serverAPI.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UI/BrandAddModal/BrandAddModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/BrandAddModal/BrandAddModal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UI/StaffEditModal/StaffEditModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/StaffEditModal/StaffEditModal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/DashboardBody/DashboardBody.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/DashboardBody/DashboardBody.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/layout/DashboardLayout/DashboardLayout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/layout/DashboardLayout/DashboardLayout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/Dashboard/Brand/Brand.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Dashboard/Brand/Brand.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/Dashboard/Home/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Dashboard/Home/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/Dashboard/Product/Product.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Dashboard/ProductCategory/ProductCategory.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/Dashboard/Product/Product.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Dashboard/Product/Product.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/actions/ProductCategoryAction.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/actions/ProductCategoryAction.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,6 +31,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
+        <option value="HTML File" />
         <option value="JavaScript File" />
       </list>
     </option>
@@ -31,6 +50,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -89,7 +109,9 @@
       <workItem from="1578946815662" duration="14603000" />
       <workItem from="1578964926628" duration="4994000" />
       <workItem from="1578973607235" duration="618000" />
-      <workItem from="1579042904170" duration="19365000" />
+      <workItem from="1579042904170" duration="24985000" />
+      <workItem from="1579141356087" duration="8246000" />
+      <workItem from="1579205302844" duration="7593000" />
     </task>
     <servers />
   </component>

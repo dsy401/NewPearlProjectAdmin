@@ -37,7 +37,19 @@ const url = {
     GetBrands: HOST + '/api/brand',
     PostBrands: HOST + '/api/brand',
     GetProductCategory: HOST + '/api/product_category',
-    UploadImage: HOST +'/api/upload_image'
+    UploadImage: HOST +'/api/upload_image',
+    UpdateProductCategory: (id) => {
+        return HOST + '/api/product_category/' + id
+    },
+    FirstProductCategory: (id) =>{
+        return HOST + '/api/product_category/' + id
+    },
+    DeleteBrand: (id) =>{
+        return HOST + '/api/brand/'+ id
+    },
+    UpdateBrand: (id) =>{
+        return HOST + "/api/brand/" +id
+    }
 };
 
 export default url

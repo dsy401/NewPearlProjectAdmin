@@ -1,58 +1,34 @@
 import React, {Component, Fragment} from 'react'
 import DashboardBody from "../../../components/common/DashboardBody/DashboardBody";
-import {connect} from 'react-redux'
-import {FetchProductCategory} from "../../../redux/actions/ProductCategoryAction";
-import {Card, Col, Row, Spin} from "antd";
+import {FirstProductCategory} from "../../../api/api";
+import {withRouter} from 'react-router-dom'
+
 class Product extends Component{
 
-
-    componentDidMount = () =>{
-        this.props.FetchProductCategory()
+    state={
+        title: ""
     };
 
-    componentWillUnmount = ()=> {
-        this.setState = (state)=>{
-            return;
-        }
+    componentDidMount = () =>{
+        const productCategoryId = this.props.match.params.productCategoryId
+        FirstProductCategory(productCategoryId).then(res=>{
+            this.setState({
+                title: res.data.name
+            },()=>{
+
+            })
+        }).catch(err=>{
+            this.props.history.push('/dashboard/productcategory')
+        })
     };
 
     render(){
         return (
-            <Fragment>
-                <DashboardBody title={this.props.name}>
-                    <Spin style={{top:250}} tip="Loading..." spinning={this.props.Data.isLoading}>
-                        <Row gutter={[0,20]}>
-                            {this.props.Data.data.map(s=>{
-                                return (
-                                    <Col span={8}>
-                                        <Card
-                                            title={s.name}  style={{ width: 300 }} extra={<a>Edit</a>}>
-                                            <img style={{width:"100%",height:"150px"}} alt="" src={`${s.image}`}/>
-                                        </Card>
-                                    </Col>
-                                )
-                            })}
-                        </Row>
-                    </Spin>
-                </DashboardBody>
-            </Fragment>
+            <DashboardBody title={this.state.title}>
+
+            </DashboardBody>
         )
     }
 }
 
-
-const mapStateToProps = state => {
-    return {
-        Data: state.ProductCategoryReducer
-    }
-};
-
-const mapDispatchToProps = dispatch => {
-    return {
-        FetchProductCategory: ()=> dispatch(FetchProductCategory())
-    }
-};
-
-
-
-export default connect(mapStateToProps,mapDispatchToProps)(Product)
+export default withRouter(Product)

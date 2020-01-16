@@ -27,7 +27,7 @@ const DashboardLayout = (props) =>{
                     }}
                 >
                     <div className={classes.logo}>
-                        {/*<img style={{width:"90%",height:"90%"}} src={new_pearl_logo} alt=""/>*/}
+                        <img style={{width:"90%",height:"90%"}} src={new_pearl_logo} alt=""/>
                     </div>
 
                     <Menu theme="dark" mode="inline" defaultOpenKeys={['sub1','sub2']} selectedKeys={[`${props.menuBarPos}`]}>
