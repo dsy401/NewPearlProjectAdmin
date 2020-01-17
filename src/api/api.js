@@ -208,3 +208,10 @@ export const UpdateBrand = (id,data) =>{
         data:data
     })
 }
+
+export const GetProductsById = (id) =>{
+    return server({
+        method: 'GET',
+        url: url.GetProducts(id)
+    })
+}

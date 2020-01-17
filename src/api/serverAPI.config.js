@@ -49,6 +49,9 @@ const url = {
     },
     UpdateBrand: (id) =>{
         return HOST + "/api/brand/" +id
+    },
+    GetProducts: (id) =>{
+        return HOST + '/api/product/' +id
     }
 };
 

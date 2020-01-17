@@ -5,7 +5,7 @@ const LogoutModal = (props) =>{
 
     return (
         <Modal
-            title="Modal"
+            title="Log out Confirmation"
             visible={props.visible}
             onOk={props.confirm}
             onCancel={props.hideModal}
