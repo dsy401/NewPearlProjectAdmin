@@ -226,3 +226,14 @@ export const AddProduct = (data) =>{
         },
     })
 };
+
+export const UpdateProduct = (id,data)=>{
+    return server({
+        method: "PUT",
+        data:data,
+        url: url.UpdateProduct(id),
+        headers: {
+            Authorization: ' Basic '+ Base64Encoder(localStorage.getItem('token'))
+        }
+    })
+}

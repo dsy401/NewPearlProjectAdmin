@@ -53,7 +53,10 @@ const url = {
     GetProducts: (id) =>{
         return HOST + '/api/product/' +id
     },
-    AddProduct: HOST + '/api/product'
+    AddProduct: HOST + '/api/product',
+    UpdateProduct: (id) =>{
+        return HOST + '/api/product/' +id
+    }
 };
 
 export default url

@@ -1,9 +1,10 @@
 import React, {Component, Fragment} from 'react'
 import DashboardBody from "../../../components/common/DashboardBody/DashboardBody";
-import {AddProduct, FirstProductCategory, GetProductsById} from "../../../api/api";
+import {AddProduct, FirstProductCategory, GetProductsById, UpdateProduct} from "../../../api/api";
 import {withRouter} from 'react-router-dom'
-import {Card, Col, Row, Spin,Input,Button} from "antd";
+import {Card, Col, Row, Spin,Input,Button,Icon} from "antd";
 import ProductAddModal from "../../../components/UI/AddProductModal/AddProductModal";
+import EditProductModal from "../../../components/UI/EditProductModal/EditProductModal";
 const {Search} = Input;
 class Product extends Component{
 
@@ -51,7 +52,24 @@ class Product extends Component{
         this.setState({AddProductModalVisible: true})
     };
 
-    AddProductHandler = (data) =>{
+    UpdateProductHandler = (id,data,cb) =>{
+        this.setState({isLoading:true})
+        UpdateProduct(id,data).then(res=>{
+            this.setState({isLoading:false},()=>{
+                this.setState({
+                    data: res.data,
+                    dataShown: res.data,
+                    EditProductModalVisible: false
+                })
+                cb()
+            })
+        }).catch(err=>{
+            console.log(err)
+            this.setState({isLoading:false})
+        })
+    }
+
+    AddProductHandler = (data,cb) =>{
         this.setState({isLoading:true})
         AddProduct(data).then(res=>{
             this.setState({isLoading:false},()=>{
@@ -60,11 +78,16 @@ class Product extends Component{
                     dataShown: res.data,
                     AddProductModalVisible: false
                 })
+                cb()
             })
         }).catch(err=>{
             console.log(err)
             this.setState({isLoading:false})
         })
+    }
+
+    hideProductEditModal = () =>{
+        this.setState({EditProductModalVisible:false})
     }
 
     openProductEditModal = (obj) =>{
@@ -142,20 +165,29 @@ class Product extends Component{
             <Fragment>
                 <DashboardBody title={this.state.title}>
                     <Spin style={{top:250}} tip="Loading..." spinning={this.state.isLoading}>
-                        <Search
-                            placeholder="Search By Code or Name..."
-                            onChange={this.SearchOnChangeHandler}
-                            style={{ width: 300,marginBottom:20,marginRight:20 }}
-                            value={this.state.searchValue}
-                        />
-                        <Button onClick={this.openProductAddModal} type={"primary"}>Add Product</Button>
-
+                        <Row style={{marginBottom:20}}>
+                            <Col span={8}>
+                                <Button onClick={()=>{this.props.history.push('/dashboard/productcategory')}} type="primary">
+                                    <Icon type="left" />
+                                    Go back
+                                </Button>
+                            </Col>
+                                    <div style={{float:"right"}}>
+                                        <Search
+                                            placeholder="Search By Code or Name..."
+                                            onChange={this.SearchOnChangeHandler}
+                                            style={{ width: 300}}
+                                            value={this.state.searchValue}
+                                        />
+                                        <Button onClick={this.openProductAddModal} type={"primary"}>Add Product</Button>
+                                    </div>
+                        </Row>
                         <Row gutter={[0,20]}>
                             {this.state.dataShown.map((s,i)=>{
                                 return (
                                     <Col key={i.toString()} span={8}>
                                         <Card
-                                            title={s.code}  style={{ width: 300 }} extra={<a>Edit</a>}>
+                                            title={s.code}  style={{ width: 300 }} extra={<a onClick={()=>{this.openProductEditModal(s)}}>Edit</a>}>
                                             <img style={{width:"100%",height:"150px"}} alt="" src={`${s.image}`}/>
                                         </Card>
                                     </Col>
@@ -164,9 +196,16 @@ class Product extends Component{
                         </Row>
                     </Spin>
                 </DashboardBody>
+
                 <ProductAddModal
                     visible={this.state.AddProductModalVisible} productCategoryId={this.props.match.params.productCategoryId}
                     isLoading={this.state.isLoading} hideModal={this.hideProductAddModal} AddProduct={this.AddProductHandler}
+                />
+
+                <EditProductModal
+                    visible={this.state.EditProductModalVisible} hideModal={this.hideProductEditModal}
+                    isLoading={this.state.isLoading} values={this.state.passToModal} productCategoryId={this.props.match.params.productCategoryId}
+                    updateProduct={this.UpdateProductHandler}
                 />
             </Fragment>
         )
