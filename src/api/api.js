@@ -207,11 +207,22 @@ export const UpdateBrand = (id,data) =>{
         },
         data:data
     })
-}
+};
 
 export const GetProductsById = (id) =>{
     return server({
         method: 'GET',
         url: url.GetProducts(id)
     })
-}
+};
+
+export const AddProduct = (data) =>{
+    return server({
+        method: "POST",
+        data:data,
+        url: url.AddProduct,
+        headers: {
+            Authorization: ' Basic '+ Base64Encoder(localStorage.getItem('token'))
+        },
+    })
+};

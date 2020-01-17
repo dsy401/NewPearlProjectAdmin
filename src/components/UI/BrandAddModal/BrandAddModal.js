@@ -102,6 +102,7 @@ const BrandAddModal = Form.create({name:"brand_add_modal"})(
                             {getFieldDecorator('image', {
                                 valuePropName: 'image',
                                 getValueFromEvent: this.imageFile,
+                                initialValue: []
                             })(
                                 <Upload action={UploadImage} name="image" listType="picture">
                                     {this.state.imageFileList.length===0?(<Button>
