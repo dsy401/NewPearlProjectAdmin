@@ -243,6 +243,7 @@ class Product extends Component{
                     visible={this.state.AddProductModalVisible} productCategoryId={this.props.match.params.productCategoryId}
                     isLoading={this.state.isLoading} hideModal={this.hideProductAddModal} AddProduct={this.AddProductHandler}
                 />
+                
 
                 <EditProductModal
                     visible={this.state.EditProductModalVisible} hideModal={this.hideProductEditModal}
