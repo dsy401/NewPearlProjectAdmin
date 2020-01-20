@@ -53,11 +53,9 @@ const url = {
     GetProducts: (id) =>{
         return HOST + '/api/product/' +id
     },
-<<<<<<< HEAD
     CHANGEPASSWORD:(id)=>{
         return HOST + '/api/change_password/' +id
     },
-=======
     AddProduct: HOST + '/api/product',
     UpdateProduct: (id) =>{
         return HOST + '/api/product/' +id
@@ -69,7 +67,6 @@ const url = {
     DeleteProduct: (id) =>{
         return HOST + '/api/product/' +id
     }
->>>>>>> f702fa8c0a713bec21fb8699691cb7c15e14826f
 };
 
 export default url

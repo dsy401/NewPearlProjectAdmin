@@ -59,7 +59,7 @@ class ChangePassword extends Component{
             callback();
           }
         callback();
-        
+
       };
       compareToFirstPassword = (rule, value, callback) => {
         const { form } = this.props;
@@ -87,13 +87,13 @@ class ChangePassword extends Component{
         return (
             <DashboardBody title={this.props.name}>
             <Form>
-            
+
              <Form.Item label="Old Password" hasFeedback>
                                 {getFieldDecorator('old_password', {
                                     rules: [{ required: true, message: 'Please input your Old Password!' }],
                                 })
                                 (
-                                    <Input/>,
+                                    <Input.Password/>,
                                 )}
                             </Form.Item>
             <Form.Item label="Password" hasFeedback>
@@ -105,7 +105,7 @@ class ChangePassword extends Component{
               },
               {
                 validator: this.validateToNextPassword,
-                                
+
               },
             ],
           })(<Input.Password />)}
@@ -124,13 +124,13 @@ class ChangePassword extends Component{
           })(<Input.Password onBlur={this.handleConfirmBlur} />)}
         </Form.Item>
         <Form.Item >
-         
+
             <Button  type="primary" htmlType="submit" onClick={this.submitpassword} style={{marginLeft:'45%'}}>
                    submit
             </Button>
             </Form.Item>
-            <ChangepasswordModal hideModal={this.hidechangepasswordModal} confirm={this.passwordchanged} visible={this.state.changeModalVisible}></ChangepasswordModal>
-        
+            <ChangepasswordModal hideModal={this.hidechangepasswordModal} confirm={this.passwordchanged} visible={this.state.changeModalVisible}/>
+
             </Form>
             </DashboardBody>
         )
