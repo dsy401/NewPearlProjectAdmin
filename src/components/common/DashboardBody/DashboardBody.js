@@ -37,6 +37,7 @@ class DashboardBody extends Component{
     LogoutHandler = () =>{
         localStorage.removeItem("token")
         localStorage.removeItem('name')
+        localStorage.removeItem('user_id')
         window.location = "/login"
     };
 

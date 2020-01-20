@@ -10,6 +10,16 @@ export const Login = (data) =>{
         data :data
     })
 };
+export const ChangePassWord=(data,id)=>{
+    return server({
+        url:url.CHANGEPASSWORD(id),
+        method:'POST',
+        data:data,
+        headers: {
+            Authorization: ' Basic '+ Base64Encoder(localStorage.getItem('token'))
+        }
+    })
+}
 
 
 export const GetLottery = () =>{

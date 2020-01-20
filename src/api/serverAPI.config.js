@@ -52,7 +52,10 @@ const url = {
     },
     GetProducts: (id) =>{
         return HOST + '/api/product/' +id
-    }
+    },
+    CHANGEPASSWORD:(id)=>{
+        return HOST + '/api/change_password/' +id
+    },
 };
 
 export default url
