@@ -56,6 +56,13 @@ const url = {
     AddProduct: HOST + '/api/product',
     UpdateProduct: (id) =>{
         return HOST + '/api/product/' +id
+    },
+    AddStaff: HOST + '/api/staff',
+    DeleteStaff: (id) =>{
+        return HOST + '/api/staff/' + id
+    },
+    DeleteProduct: (id) =>{
+        return HOST + '/api/product/' +id
     }
 };
 

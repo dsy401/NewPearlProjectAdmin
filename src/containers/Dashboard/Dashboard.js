@@ -1,5 +1,4 @@
-import React, {Component} from 'react'
-import DashboardLayout from "../../components/layout/DashboardLayout/DashboardLayout";
+import React, {Component,Suspense,lazy} from 'react'
 import {
     Switch,
     Route,
@@ -12,7 +11,7 @@ import {SetPos} from "../../redux/actions/menuBarAction";
 import DashboardRedirect from "./DashboardRedirect/DashboardRedirect";
 import {TokenValidate} from '../../api/api'
 import {DashboardRoute,menu} from '../../Route/DashboardRoute'
-
+const DashBoardLayout = lazy(()=>import('../../components/layout/DashboardLayout/DashboardLayout'))
 class Dashboard extends Component{
     constructor(props) {
         super(props);
@@ -23,17 +22,19 @@ class Dashboard extends Component{
 
     render(){
         return (
-            <DashboardLayout screens={menu}>
-                <Switch>
-                    {DashboardRoute.map((s,i)=>{
-                        return (
-                            <Route key={i.toString()} path={s.path} component={ComponentWithParameter(s.component,this.props.SetPos,s.pos,s.name)}/>
-                        )
-                    })}
-                    <Route path={`${this.props.match.path}/`} component={DashboardRedirect}/>
-                    <Redirect from={"*"} to={"/404"}/>
-                </Switch>
-            </DashboardLayout>
+            <Suspense fallback={<div>Loading ...</div>}>
+                <DashBoardLayout screens={menu}>
+                    <Switch>
+                        {DashboardRoute.map((s,i)=>{
+                            return (
+                                <Route key={i.toString()} path={s.path} component={ComponentWithParameter(s.component,this.props.SetPos,s.pos,s.name)}/>
+                            )
+                        })}
+                        <Route path={`${this.props.match.path}/`} component={DashboardRedirect}/>
+                        <Redirect from={"*"} to={"/404"}/>
+                    </Switch>
+                </DashBoardLayout>
+            </Suspense>
         )
     }
 }

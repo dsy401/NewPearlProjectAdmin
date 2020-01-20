@@ -1,10 +1,11 @@
 import React, {Component, Fragment} from 'react'
 import DashboardBody from "../../../components/common/DashboardBody/DashboardBody";
-import {AddProduct, FirstProductCategory, GetProductsById, UpdateProduct} from "../../../api/api";
+import {AddProduct, DeleteProduct, FirstProductCategory, GetProductsById, UpdateProduct} from "../../../api/api";
 import {withRouter} from 'react-router-dom'
 import {Card, Col, Row, Spin,Input,Button,Icon} from "antd";
 import ProductAddModal from "../../../components/UI/AddProductModal/AddProductModal";
 import EditProductModal from "../../../components/UI/EditProductModal/EditProductModal";
+import GeneralConfirmModal from "../../../components/UI/GeneralConfirmModal/GeneralConfirmModal";
 const {Search} = Input;
 class Product extends Component{
 
@@ -16,6 +17,11 @@ class Product extends Component{
         searchValue: "",
         AddProductModalVisible: false,
         EditProductModalVisible: false,
+        DeleteProductModalVisible: false,
+        productDelete:{
+            code: "",
+            id:""
+        },
         passToModal: {
             id: "",
             code:"",
@@ -160,6 +166,37 @@ class Product extends Component{
         })
     };
 
+    hideDeleteProductModal = () =>{
+        this.setState({
+            DeleteProductModalVisible: false
+        })
+    };
+
+    OpenDeleteProductModal = (obj) =>{
+        this.setState({
+            DeleteProductModalVisible: true,
+            productDelete: {
+                code: obj.code,
+                id: obj._id.$oid
+            }
+        })
+    };
+
+    ConfirmDeleteHandler = () =>{
+        this.setState({isLoading:true})
+        DeleteProduct(this.state.productDelete.id).then(res=>{
+            this.setState({
+                data:res.data,
+                dataShown: res.data,
+                isLoading: false,
+                DeleteProductModalVisible: false
+            })
+        }).catch(err=>{
+            this.setState({isLoading:false})
+            console.log(err)
+        })
+    }
+
     render(){
         return (
             <Fragment>
@@ -187,7 +224,12 @@ class Product extends Component{
                                 return (
                                     <Col key={i.toString()} span={8}>
                                         <Card
-                                            title={s.code}  style={{ width: 300 }} extra={<a onClick={()=>{this.openProductEditModal(s)}}>Edit</a>}>
+                                            title={s.code}  style={{ width: 300 }} extra={
+                                                <Fragment>
+                                                    <a style={{marginRight:10}} onClick={()=>{this.OpenDeleteProductModal(s)}}>Delete</a>
+                                                    <a onClick={()=>{this.openProductEditModal(s)}}>Edit</a>
+                                                </Fragment>
+                                            }>
                                             <img style={{width:"100%",height:"150px"}} alt="" src={`${s.image}`}/>
                                         </Card>
                                     </Col>
@@ -206,6 +248,14 @@ class Product extends Component{
                     visible={this.state.EditProductModalVisible} hideModal={this.hideProductEditModal}
                     isLoading={this.state.isLoading} values={this.state.passToModal} productCategoryId={this.props.match.params.productCategoryId}
                     updateProduct={this.UpdateProductHandler}
+                />
+                <GeneralConfirmModal
+                    title="Delete Confirmation"
+                    visible={this.state.DeleteProductModalVisible}
+                    confirm={this.ConfirmDeleteHandler}
+                    hideModal={this.hideDeleteProductModal}
+                    isLoading={this.state.isLoading}
+                    text={`Are sure to delete ${this.state.productDelete.code}`}
                 />
             </Fragment>
         )

@@ -1,20 +1,21 @@
 import React from 'react'
 import { Modal,Typography } from 'antd';
 
-const LogoutModal = (props) =>{
+const GeneralConfirmModal = (props) =>{
 
     return (
         <Modal
-            title="Log out Confirmation"
+            title={props.title}
             visible={props.visible}
             onOk={props.confirm}
             onCancel={props.hideModal}
             okText="Confirm"
             cancelText="Cancel"
+            confirmLoading={props.isLoading}
         >
-            <Typography.Title level={3}>Are sure to log out</Typography.Title>
+            <Typography.Title level={3}>{props.text}</Typography.Title>
         </Modal>
     )
 }
 
-export default LogoutModal
+export default GeneralConfirmModal

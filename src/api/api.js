@@ -237,3 +237,34 @@ export const UpdateProduct = (id,data)=>{
         }
     })
 }
+
+export const AddStaff = (data) =>{
+    return server({
+        method: "POST",
+        url: url.AddStaff,
+        headers: {
+            Authorization: ' Basic '+ Base64Encoder(localStorage.getItem('token'))
+        },
+        data:data,
+    })
+}
+
+export const DeleteStaff = (id) =>{
+    return server({
+        method: "DELETE",
+        url: url.DeleteStaff(id),
+        headers: {
+            Authorization: ' Basic '+ Base64Encoder(localStorage.getItem('token'))
+        }
+    })
+}
+
+export const DeleteProduct = (id) =>{
+    return server({
+        method: "DELETE",
+        url: url.DeleteProduct(id),
+        headers: {
+            Authorization: ' Basic '+ Base64Encoder(localStorage.getItem('token'))
+        }
+    })
+}
