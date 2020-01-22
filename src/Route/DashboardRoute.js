@@ -8,6 +8,9 @@ import Brand from "../containers/Dashboard/Brand/Brand";
 import ProductCategory from "../containers/Dashboard/ProductCategory/ProductCategory";
 import ChangePassword from "../containers/Dashboard/ChangePassword/ChangePassword";
 import Product from "../containers/Dashboard/Product/Product";
+import News from "../containers/Dashboard/Publish/Publish";
+import NewsInfo from "../containers/Dashboard/NewsInfo/NewsInfo";
+import NewsEdit from "../containers/Dashboard/NewsEdit/NewsEdit";
 
 const match = "/dashboard";
 export const DashboardRoute = [
@@ -70,6 +73,24 @@ export const DashboardRoute = [
         component: Product,
         path: match + "/product/:productCategoryId",
         pos:null
+    },
+    {
+        name: "Publish News",
+        component: News,
+        path: match + '/publish',
+        pos: 8
+    },
+    {
+        name: "News Information",
+        component: NewsInfo,
+        path: match + '/news',
+        pos: 9
+    },
+    {
+        name: "News Edit",
+        component: NewsEdit,
+        path: match + '/newsedit/:newsTitleId',
+        pos:null
     }
 ];
 
@@ -127,6 +148,20 @@ export const menu = [
                 icon: "shop",
                 path: match + "/productcategory",
                 pos: 7
+            },
+            {
+                name: "Publish",
+                component: News,
+                icon: "form",
+                path: match + '/publish',
+                pos: 8
+            },
+            {
+                name: "News Info",
+                component: NewsInfo,
+                icon: "bulb",
+                path: match + '/news',
+                pos: 9
             }
         ]
     },

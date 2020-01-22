@@ -108,7 +108,7 @@ const BrandAddModal = Form.create({name:"brand_add_modal"})(
                                     {this.state.imageFileList.length===0?(<Button>
                                         <Icon type="upload" /> Click to upload
                                     </Button>):null}
-                                </Upload>,
+                                </Upload>
                             )}
                         </Form.Item>
                     </Form>

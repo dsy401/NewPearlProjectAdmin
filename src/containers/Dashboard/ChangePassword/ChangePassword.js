@@ -50,7 +50,7 @@ class ChangePassword extends Component{
        this.setState({oldpassword:form.getFieldValue('old_password')})
         if (value && this.state.confirmDirty) {
           form.validateFields(['confirm'], { force: true });
-        }if (value && value == form.getFieldValue('old_password')) {
+        }if (value && value === form.getFieldValue('old_password')) {
             callback('The new password should be inconsistent with the old password!');
           } else {
               this.setState({
@@ -80,7 +80,7 @@ class ChangePassword extends Component{
               return ''
           }
         });
-      }
+      };
 
     render(){
         const { getFieldDecorator } = this.props.form;

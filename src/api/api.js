@@ -277,4 +277,50 @@ export const DeleteProduct = (id) =>{
             Authorization: ' Basic '+ Base64Encoder(localStorage.getItem('token'))
         }
     })
+};
+
+export const AddNews = (data) =>{
+    return server({
+        method:"POST",
+        url: url.AddNews,
+        data:data,
+        headers: {
+            Authorization: ' Basic '+ Base64Encoder(localStorage.getItem('token'))
+        }
+    })
+}
+
+export const GetNews = () =>{
+    return server({
+        method: "GET",
+        url: url.GetNews
+    })
+}
+
+export const DeleteNews = (id) =>{
+    return server({
+        method: "DELETE",
+        url: url.DeleteNews(id),
+        headers: {
+            Authorization: ' Basic '+ Base64Encoder(localStorage.getItem('token'))
+        }
+    })
+}
+
+export const GetNewsContent = (id) =>{
+    return server({
+        method: "GET",
+        url: url.GetsNewsContent(id),
+    })
+};
+
+export const UpdateNews = (data) =>{
+    return server({
+        method: "PUT",
+        data:data,
+        url: url.UpdateNews,
+        headers: {
+            Authorization: ' Basic '+ Base64Encoder(localStorage.getItem('token'))
+        }
+    })
 }

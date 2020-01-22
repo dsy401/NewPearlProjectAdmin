@@ -66,7 +66,16 @@ const url = {
     },
     DeleteProduct: (id) =>{
         return HOST + '/api/product/' +id
-    }
+    },
+    AddNews: HOST + '/api/news',
+    GetNews: HOST + '/api/news',
+    DeleteNews: (id) =>{
+        return HOST + '/api/news/' + id
+    },
+    GetsNewsContent: (id) =>{
+        return HOST + '/api/news/' +id
+    },
+    UpdateNews: HOST + '/api/news'
 };
 
 export default url
