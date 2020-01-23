@@ -53,6 +53,9 @@ const EditProductModal = Form.create({name:"edit_product_modal"})(
                 this.props.updateProduct(this.props.values.id,fdata,()=>{
                     this.props.form.resetFields()
                 })
+                this.setState({
+                    imageFileList:[]
+                })
             })
         };
 
@@ -67,9 +70,15 @@ const EditProductModal = Form.create({name:"edit_product_modal"})(
                     okText="Update"
                     width={1000}
                     style={{top:0}}
-                    onCancel={this.onCancel}
+                    onCancel={()=>{
+                        this.onCancel()
+                        this.setState({
+                            imageFileList:[]
+                        })
+                    }}
                     onOk={this.HandlerSubmit}
                     confirmLoading={this.props.isLoading}
+                    destroyOnClose={true}
                 >
                     <Form layout="vertical">
                         <Row type="flex" justify="space-around">

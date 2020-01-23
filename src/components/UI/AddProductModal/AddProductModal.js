@@ -47,6 +47,9 @@ const ProductAddModal = Form.create({name:"product_add_modal"})(
 
                     this.props.AddProduct(fdata,()=>{
                         this.props.form.resetFields()
+                        this.setState({
+                            imageFileList:[]
+                        })
                     })
 
                 }
@@ -64,9 +67,15 @@ const ProductAddModal = Form.create({name:"product_add_modal"})(
                     visible={this.props.visible}
                     title={`Add Product`}
                     okText="Add"
-                    onCancel={this.props.hideModal}
+                    onCancel={()=>{
+                        this.props.hideModal()
+                        this.setState({
+                            imageFileList:[]
+                        })
+                    }}
                     onOk={this.HandlerSubmit}
                     confirmLoading={this.props.isLoading}
+                    destroyOnClose={true}
                 >
                     <Form layout="vertical">
                         <Row type="flex" justify="space-around">

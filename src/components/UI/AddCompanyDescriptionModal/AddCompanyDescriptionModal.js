@@ -1,22 +1,14 @@
 import React,{Component} from 'react'
 import {Modal,Form,Input,Upload,Icon,Button} from 'antd'
-import {PostBrands, UploadImage} from '../../../api/api'
-import {connect} from 'react-redux'
-import {SetData} from "../../../redux/actions/BrandAction";
+import {UploadImage} from '../../../api/api'
 
-const BrandAddModal = Form.create({name:"brand_add_modal"})(
+const AddCompanyDescription = Form.create({name:"add_company_description"})(
     class extends Component{
 
-        UNSAFE_componentWillReceiveProps = () =>{
-            if (this.props.visible === false){
-                this.props.form.resetFields();
-            }
-        };
-
         state={
-            isLoading:false,
             imageFileList:[]
         };
+
 
         imageFile = e => {
             this.setState({
@@ -34,11 +26,13 @@ const BrandAddModal = Form.create({name:"brand_add_modal"})(
             e.preventDefault();
             this.props.form.validateFields((err, values) => {
                 if (!err){
-                    let fdata = new FormData()
-                    fdata.append('name',values.name)
-                    fdata.append('name_cn',values.name_cn)
-                    fdata.append('description',values.description)
-                    fdata.append('description_cn',values.description_cn)
+                    const fdata = new FormData()
+                    Object.keys(values).forEach(key=>{
+                        if (key==="image"){
+                        }else{
+                            fdata.append(key,values[key])
+                        }
+                    })
 
                     if (values.image.length !== 0){
                         if (values.image[0].response.is_success){
@@ -49,17 +43,7 @@ const BrandAddModal = Form.create({name:"brand_add_modal"})(
                     }else{
                         fdata.append("image","")
                     }
-
-                    this.setState({isLoading:true})
-                    PostBrands(fdata).then(res=>{
-                        this.setState({isLoading:false},()=>{
-                            this.props.hideModal()
-                            this.props.SetData(res.data)
-                        })
-                    }).catch(err=>{
-                        console.log(err);
-                        this.setState({isLoading:false})
-                    })
+                    this.props.confirm(fdata)
                     this.setState({
                         imageFileList:[]
                     })
@@ -69,12 +53,14 @@ const BrandAddModal = Form.create({name:"brand_add_modal"})(
 
 
         render(){
+            console.log(this.state)
             const { form } = this.props;
             const { getFieldDecorator } = form;
             return (
                 <Modal
+                    style={{top:10}}
                     visible={this.props.visible}
-                    title={`Add brands`}
+                    title={`Add About`}
                     okText="Add"
                     onCancel={()=>{
                         this.props.hideModal()
@@ -83,35 +69,45 @@ const BrandAddModal = Form.create({name:"brand_add_modal"})(
                         })
                     }}
                     onOk={this.HandlerSubmit}
+                    confirmLoading={this.props.isLoading}
                     destroyOnClose={true}
-                    confirmLoading={this.state.isLoading}
                 >
                     <Form layout="vertical">
-                        <Form.Item label="name">
-                            {getFieldDecorator('name', {
-                                rules: [{ required: true, message: 'Please enter the name!' }],
+                        <Form.Item label="timeline">
+                            {getFieldDecorator('timeline', {
+                                rules: [{ required: true, message: 'Please enter the timeline!' }],
                             })(<Input/>)}
                         </Form.Item>
-                        <Form.Item  label="名字">
-                            {getFieldDecorator('name_cn',{
-                                rules: [{ required: true, message: 'Please enter the chinese name!' }],
+                        <Form.Item  label="时间线">
+                            {getFieldDecorator('timeline_cn',{
+                                rules: [{ required: true, message: 'Please enter the 时间线!' }],
                             })(<Input type="textarea" />)}
                         </Form.Item>
                         <Form.Item label="description">
                             {getFieldDecorator('description',{
                                 rules: [{ required: true, message: 'Please enter the description!' }],
-                            })(<Input  />)}
+                            })(<Input.TextArea  rows={4}/>)}
                         </Form.Item>
                         <Form.Item label="描述">
                             {getFieldDecorator('description_cn',{
                                 rules: [{ required: true, message: 'Please enter the chinese description!' }],
+                            })(<Input.TextArea rows={4}/>)}
+                        </Form.Item>
+                        <Form.Item label="subheading">
+                            {getFieldDecorator('subheading',{
+                                rules: [{ required: true, message: 'Please enter the chinese subheading!' }],
+                            })(<Input />)}
+                        </Form.Item>
+                        <Form.Item label="子标题">
+                            {getFieldDecorator('subheading_cn',{
+                                rules: [{ required: true, message: 'Please enter the chinese 子标题!' }],
                             })(<Input />)}
                         </Form.Item>
                         <Form.Item label="image">
                             {getFieldDecorator('image', {
                                 valuePropName: 'image',
                                 getValueFromEvent: this.imageFile,
-                                initialValue: []
+                                rules: [{ required: true, message: 'Please upload image!' }],
                             })(
                                 <Upload action={UploadImage} name="image" listType="picture">
                                     {this.state.imageFileList.length===0?(<Button>
@@ -127,21 +123,8 @@ const BrandAddModal = Form.create({name:"brand_add_modal"})(
     }
 );
 
-const mapStateToProps = state => {
-    return {
-        BrandData: state.BrandReducer
-    }
-};
 
-const mapDispatchToProps = dispatch => {
-    return {
-        SetData: (value) =>{
-            dispatch(SetData(value))
-        }
-    }
-};
-
-export default connect(mapStateToProps,mapDispatchToProps)(BrandAddModal)
+export default AddCompanyDescription
 
 
 

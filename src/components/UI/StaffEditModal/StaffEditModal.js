@@ -79,6 +79,11 @@ const StaffEditModal = Form.create({name:"staff_modal_form"})(
                     }).catch(err=>{
                         this.setState({isLoading:false});
                     })
+
+                    this.setState({
+                        imageFileList:[],
+                        wechatFileList:[]
+                    })
                 }
             })
         };
@@ -92,9 +97,16 @@ const StaffEditModal = Form.create({name:"staff_modal_form"})(
                     visible={this.props.visible}
                     title={`Edit ${this.props.values.name} Information`}
                     okText="Update"
-                    onCancel={this.onCancel}
+                    onCancel={()=>{
+                        this.onCancel()
+                        this.setState({
+                            imageFileList:[],
+                            wechatFileList:[]
+                        })
+                    }}
                     onOk={this.HandlerSubmit}
                     confirmLoading={this.state.isLoading}
+                    destroyOnClose={true}
                 >
                     <Form layout="vertical">
                         <Form.Item label="role">

@@ -64,6 +64,11 @@ const StaffAddModal = Form.create({name:"staff_add_modal"})(
                         this.props.form.resetFields()
                         this.props.hideModal()
                     })
+
+                    this.setState({
+                        imageFileList:[],
+                        wechatFileList:[]
+                    })
                 }
             })
         };
@@ -78,7 +83,14 @@ const StaffAddModal = Form.create({name:"staff_add_modal"})(
                     title={`Add Staff`}
                     okText="Add"
                     style={{top:30}}
-                    onCancel={this.props.hideModal}
+                    onCancel={()=>{
+                        this.props.hideModal()
+                        this.setState({
+                            imageFileList:[],
+                            wechatFileList:[]
+                        })
+                    }}
+                    destroyOnClose={true}
                     onOk={this.HandlerSubmit}
                     confirmLoading={this.props.isLoading}
                 >

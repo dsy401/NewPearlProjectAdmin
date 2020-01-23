@@ -324,3 +324,42 @@ export const UpdateNews = (data) =>{
         }
     })
 }
+
+export const GetAbout = () =>{
+    return server({
+        method:"GET",
+        url: url.GetAbout
+    })
+}
+
+export const AddAbout = (data) =>{
+    return server({
+        method: "POST",
+        url: url.PostAbout,
+        data:data,
+        headers: {
+            Authorization: ' Basic '+ Base64Encoder(localStorage.getItem('token'))
+        }
+    })
+}
+
+export const DeleteAbout = (id) =>{
+    return server({
+        method: "DELETE",
+        url: url.DeleteAbout(id),
+        headers: {
+            Authorization: ' Basic '+ Base64Encoder(localStorage.getItem('token'))
+        }
+    })
+}
+
+export const UpdateAbout = (id,data) =>{
+    return server({
+        method: "PUT",
+        url: url.UpdateAbout(id),
+        data: data,
+        headers: {
+            Authorization: ' Basic '+ Base64Encoder(localStorage.getItem('token'))
+        }
+    })
+}

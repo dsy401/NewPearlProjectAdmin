@@ -34,8 +34,7 @@ axios.interceptors.response.use(
 
         return res
     }
-
-,error => {
+    ,error => {
         if (error.response.data === "Unauthorized Access" || error.response.status===401){
             localStorage.removeItem('token')
             window.location = "/login"

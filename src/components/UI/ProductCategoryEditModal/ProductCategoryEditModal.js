@@ -55,6 +55,10 @@ const ProductCategoryEditModal = Form.create({name:"product_category_edit_modal"
                     this.props.UpdateAndFetchProductCategory(this.props.values.id,fdata,()=>{
                         this.onCancel()
                     })
+
+                    this.setState({
+                        imageFileList:[]
+                    })
                 }
             })
         };
@@ -68,7 +72,13 @@ const ProductCategoryEditModal = Form.create({name:"product_category_edit_modal"
                     visible={this.props.visible}
                     title={`Edit ${this.props.values.name} Information`}
                     okText="Update"
-                    onCancel={this.onCancel}
+                    onCancel={()=>{
+                        this.onCancel()
+                        this.setState({
+                            imageFileList:[]
+                        })
+                    }}
+                    destroyOnClose={true}
                     onOk={this.HandlerSubmit}
                     confirmLoading={this.props.Data.isLoading}
                 >

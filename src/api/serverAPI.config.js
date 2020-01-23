@@ -75,7 +75,15 @@ const url = {
     GetsNewsContent: (id) =>{
         return HOST + '/api/news/' +id
     },
-    UpdateNews: HOST + '/api/news'
+    UpdateNews: HOST + '/api/news',
+    GetAbout: HOST + '/api/about',
+    PostAbout: HOST + '/api/about',
+    DeleteAbout: (id) =>{
+        return HOST + '/api/about/' + id
+    },
+    UpdateAbout: (id) =>{
+        return HOST + '/api/about/' + id
+    }
 };
 
 export default url

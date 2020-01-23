@@ -16,7 +16,7 @@ const AddLotteryForm = (props) =>{
                     data.append("address",values.address)
                     data.append("phone",values.phone)
                     data.append("email",values.email)
-                    props.setIsLoading(true)
+                    props.setIsLoading(true);
                     AddLocalClient(data).then(res=>{
                         props.setIsLoading(false)
                         setTimeout(()=>{
@@ -108,6 +108,6 @@ const LocalClientAddModal = (props) =>{
             <AddLotteryFormTemplate isLoading={isLoading} submit={HandleOk} setIsLoading={setIsLoading} closeModal={props.closeModal}/>
         </Modal>
     )
-}
+};
 
 export default LocalClientAddModal
