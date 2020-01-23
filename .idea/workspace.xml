@@ -2,22 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6147ab0d-39d3-4044-922e-9c4e28734021" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/UI/AddCompanyDescriptionModal/AddCompanyDescriptionModal.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/UI/EditCompanyDescriptionModal/EditCompanyDescriptionModal.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/serverAPI.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/serverAPI.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UI/AddProductModal/AddProductModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/AddProductModal/AddProductModal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UI/BrandAddModal/BrandAddModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/BrandAddModal/BrandAddModal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UI/BrandEditModal/BrandEditModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/BrandEditModal/BrandEditModal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UI/EditProductModal/EditProductModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/EditProductModal/EditProductModal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UI/LocalClientAddModal/LocalClientAddModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/LocalClientAddModal/LocalClientAddModal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UI/ProductCategoryEditModal/ProductCategoryEditModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/ProductCategoryEditModal/ProductCategoryEditModal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UI/StaffAddModal/StaffAddModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/StaffAddModal/StaffAddModal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UI/StaffEditModal/StaffEditModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/StaffEditModal/StaffEditModal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/Dashboard/CompanyDescription/CompanyDescription.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Dashboard/CompanyDescription/CompanyDescription.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/Dashboard/StaffInfo/StaffInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Dashboard/StaffInfo/StaffInfo.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,7 +106,7 @@
       <workItem from="1579645985721" duration="20957000" />
       <workItem from="1579730054440" duration="931000" />
       <workItem from="1579733812955" duration="14181000" />
-      <workItem from="1579810198803" duration="4277000" />
+      <workItem from="1579810198803" duration="5165000" />
     </task>
     <servers />
   </component>
