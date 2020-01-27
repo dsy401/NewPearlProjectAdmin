@@ -2,9 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6147ab0d-39d3-4044-922e-9c4e28734021" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/s-app.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/asset-manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/logo192.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/logo512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/precache-manifest.715a0306fa0daf97c6ff23bdb3cb75c3.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/robots.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/service-worker.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/css/3.5a1166ae.chunk.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/css/3.5a1166ae.chunk.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/css/main.d1eafc54.chunk.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/css/main.d1eafc54.chunk.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/2.2d04d101.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/2.2d04d101.chunk.js.LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/2.2d04d101.chunk.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/3.566f3388.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/3.566f3388.chunk.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/main.bd95df6f.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/main.bd95df6f.chunk.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/runtime-main.0b953208.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/runtime-main.0b953208.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/media/new_pearl_logo.76f33ebc.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -17,6 +42,7 @@
       <list>
         <option value="CSS File" />
         <option value="HTML File" />
+        <option value="package.json" />
         <option value="JavaScript File" />
       </list>
     </option>
@@ -43,12 +69,16 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_package_manager_path" value="yarn" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src/components/UI" />
       <recent name="$PROJECT_DIR$/src/containers/Dashboard" />
       <recent name="$PROJECT_DIR$/src/containers/Dashboard/WebManagment" />
@@ -120,35 +150,43 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="-1341" y="184" key="#ESLint" timestamp="1579820310876">
+      <screen x="-1920" y="23" width="1920" height="1057" />
+    </state>
+    <state x="-1341" y="184" key="#ESLint/-1920.23.1920.1057/0.23.1680.965@-1920.23.1920.1057" timestamp="1579820310876" />
     <state x="-1211" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1578959553507">
       <screen x="-1920" y="23" width="1920" height="979" />
     </state>
     <state x="-1211" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-1920.23.1920.979/0.23.1680.1027@-1920.23.1920.979" timestamp="1578959553507" />
-    <state width="1632" height="255" key="GridCell.Tab.0.bottom" timestamp="1578609879284">
-      <screen x="0" y="23" width="1680" height="1027" />
+    <state width="1632" height="266" key="GridCell.Tab.0.bottom" timestamp="1579820327036">
+      <screen x="-1920" y="23" width="1920" height="1057" />
     </state>
     <state width="1632" height="255" key="GridCell.Tab.0.bottom/-1920.23.1920.1057/0.23.1680.956@-1920.23.1920.1057" timestamp="1578531824448" />
+    <state width="1632" height="266" key="GridCell.Tab.0.bottom/-1920.23.1920.1057/0.23.1680.965@-1920.23.1920.1057" timestamp="1579820327036" />
     <state width="1632" height="255" key="GridCell.Tab.0.bottom/-1920.23.1920.979/0.23.1680.1027@-1920.23.1920.979" timestamp="1578544924506" />
     <state width="1632" height="255" key="GridCell.Tab.0.bottom/-1920.23.1920.979/0.23.1680.1027@0.23.1680.1027" timestamp="1578609879284" />
     <state width="1632" height="255" key="GridCell.Tab.0.bottom/-1920.23.1920.980/0.23.1680.1027@-1920.23.1920.980" timestamp="1578546391275" />
-    <state width="1632" height="255" key="GridCell.Tab.0.center" timestamp="1578609879283">
-      <screen x="0" y="23" width="1680" height="1027" />
+    <state width="1632" height="266" key="GridCell.Tab.0.center" timestamp="1579820327035">
+      <screen x="-1920" y="23" width="1920" height="1057" />
     </state>
     <state width="1632" height="255" key="GridCell.Tab.0.center/-1920.23.1920.1057/0.23.1680.956@-1920.23.1920.1057" timestamp="1578531824447" />
+    <state width="1632" height="266" key="GridCell.Tab.0.center/-1920.23.1920.1057/0.23.1680.965@-1920.23.1920.1057" timestamp="1579820327035" />
     <state width="1632" height="255" key="GridCell.Tab.0.center/-1920.23.1920.979/0.23.1680.1027@-1920.23.1920.979" timestamp="1578544924505" />
     <state width="1632" height="255" key="GridCell.Tab.0.center/-1920.23.1920.979/0.23.1680.1027@0.23.1680.1027" timestamp="1578609879283" />
     <state width="1632" height="255" key="GridCell.Tab.0.center/-1920.23.1920.980/0.23.1680.1027@-1920.23.1920.980" timestamp="1578546391274" />
-    <state width="1632" height="255" key="GridCell.Tab.0.left" timestamp="1578609879282">
-      <screen x="0" y="23" width="1680" height="1027" />
+    <state width="1632" height="266" key="GridCell.Tab.0.left" timestamp="1579820327034">
+      <screen x="-1920" y="23" width="1920" height="1057" />
     </state>
     <state width="1632" height="255" key="GridCell.Tab.0.left/-1920.23.1920.1057/0.23.1680.956@-1920.23.1920.1057" timestamp="1578531824446" />
+    <state width="1632" height="266" key="GridCell.Tab.0.left/-1920.23.1920.1057/0.23.1680.965@-1920.23.1920.1057" timestamp="1579820327034" />
     <state width="1632" height="255" key="GridCell.Tab.0.left/-1920.23.1920.979/0.23.1680.1027@-1920.23.1920.979" timestamp="1578544924504" />
     <state width="1632" height="255" key="GridCell.Tab.0.left/-1920.23.1920.979/0.23.1680.1027@0.23.1680.1027" timestamp="1578609879282" />
     <state width="1632" height="255" key="GridCell.Tab.0.left/-1920.23.1920.980/0.23.1680.1027@-1920.23.1920.980" timestamp="1578546391274" />
-    <state width="1632" height="255" key="GridCell.Tab.0.right" timestamp="1578609879283">
-      <screen x="0" y="23" width="1680" height="1027" />
+    <state width="1632" height="266" key="GridCell.Tab.0.right" timestamp="1579820327035">
+      <screen x="-1920" y="23" width="1920" height="1057" />
     </state>
     <state width="1632" height="255" key="GridCell.Tab.0.right/-1920.23.1920.1057/0.23.1680.956@-1920.23.1920.1057" timestamp="1578531824447" />
+    <state width="1632" height="266" key="GridCell.Tab.0.right/-1920.23.1920.1057/0.23.1680.965@-1920.23.1920.1057" timestamp="1579820327035" />
     <state width="1632" height="255" key="GridCell.Tab.0.right/-1920.23.1920.979/0.23.1680.1027@-1920.23.1920.979" timestamp="1578544924506" />
     <state width="1632" height="255" key="GridCell.Tab.0.right/-1920.23.1920.979/0.23.1680.1027@0.23.1680.1027" timestamp="1578609879283" />
     <state width="1632" height="255" key="GridCell.Tab.0.right/-1920.23.1920.980/0.23.1680.1027@-1920.23.1920.980" timestamp="1578546391275" />
@@ -167,5 +205,9 @@
     <state x="-1281" y="249" width="670" height="730" key="search.everywhere.popup/-1920.23.1920.1057/0.23.1680.960@-1920.23.1920.1057" timestamp="1579649406119" />
     <state x="-1281" y="232" width="670" height="676" key="search.everywhere.popup/-1920.23.1920.979/0.23.1680.1027@-1920.23.1920.979" timestamp="1578959546853" />
     <state x="2319" y="249" width="670" height="730" key="search.everywhere.popup/1680.23.1920.1057/0.23.1680.956@1680.23.1920.1057" timestamp="1578721254348" />
+    <state x="-1211" y="369" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1579820186675">
+      <screen x="-1920" y="23" width="1920" height="1057" />
+    </state>
+    <state x="-1211" y="369" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/-1920.23.1920.1057/0.23.1680.965@-1920.23.1920.1057" timestamp="1579820186675" />
   </component>
 </project>

@@ -2,7 +2,7 @@
   "name": "newpearlprojectadmin",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://.",
+  "homepage": ".",
   "dependencies": {
     "@babel/core": "7.7.4",
     "@ckeditor/ckeditor5-build-classic": "^16.0.0",
@@ -149,18 +149,5 @@
     "presets": [
       "react-app"
     ]
-  },
-  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
-  "main": "app.js",
-  "devDependencies": {},
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/dsy401/NewPearlProjectAdmin.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/dsy401/NewPearlProjectAdmin/issues"
   }
 }
