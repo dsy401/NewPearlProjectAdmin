@@ -42,19 +42,19 @@ const StaffEditModal = Form.create({name:"staff_modal_form"})(
 
         onCancel = () =>{
             this.props.hideModal()
-        }
+        };
 
 
 
         HandlerSubmit = (e)=>{
-            e.preventDefault()
+            e.preventDefault();
             this.props.form.validateFields((err, values) => {
                 if (!err){
-                    let fdata = new FormData()
-                    fdata.append('role',values.role)
-                    fdata.append('role_cn',values.role_cn)
-                    fdata.append('facebook',values.facebook)
-                    fdata.append('linkedin',values.linkedin)
+                    let fdata = new FormData();
+                    fdata.append('role',values.role);
+                    fdata.append('role_cn',values.role_cn);
+                    fdata.append('facebook',values.facebook);
+                    fdata.append('linkedin',values.linkedin);
                     if (values.wechat.length !== 0){
                         if (values.wechat[0].response.is_success){
                             fdata.append("wechat",values.wechat[0].response.data)
