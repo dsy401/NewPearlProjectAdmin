@@ -363,3 +363,14 @@ export const UpdateAbout = (id,data) =>{
         }
     })
 }
+
+export const SendEmailToLocalClient = (data) =>{
+    return server({
+        method: 'POST',
+        url: url.SendEmailToLocalClient,
+        data: data,
+        headers: {
+            Authorization: ' Basic '+ Base64Encoder(localStorage.getItem('token'))
+        }
+    })
+}

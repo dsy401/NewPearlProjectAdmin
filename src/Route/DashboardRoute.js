@@ -11,6 +11,7 @@ import Product from "../containers/Dashboard/Product/Product";
 import News from "../containers/Dashboard/Publish/Publish";
 import NewsInfo from "../containers/Dashboard/NewsInfo/NewsInfo";
 import NewsEdit from "../containers/Dashboard/NewsEdit/NewsEdit";
+import EmailSender from "../containers/Dashboard/EmailSender/EmailSender";
 
 const match = "/dashboard";
 export const DashboardRoute = [
@@ -91,6 +92,12 @@ export const DashboardRoute = [
         component: NewsEdit,
         path: match + '/newsedit/:newsTitleId',
         pos:null
+    },
+    {
+        name: "Email",
+        component: EmailSender,
+        path: match + '/email',
+        pos: 10
     }
 ];
 
@@ -176,6 +183,13 @@ export const menu = [
                 icon: "user",
                 path: match +"/localclient",
                 pos:3
+            },
+            {
+                name: "Email",
+                component: EmailSender,
+                icon: 'mail',
+                path: match + '/email',
+                pos: 10
             }
         ]
     }

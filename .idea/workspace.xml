@@ -2,9 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6147ab0d-39d3-4044-922e-9c4e28734021" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/UI/ProductPreviewModal/ProductPreviewModal.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/containers/Dashboard/EmailSender/EmailSender.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UI/StaffEditModal/StaffEditModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/StaffEditModal/StaffEditModal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Route/DashboardRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Route/DashboardRoute.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/serverAPI.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/serverAPI.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UI/AddProductModal/AddProductModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/AddProductModal/AddProductModal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UI/EditProductModal/EditProductModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/EditProductModal/EditProductModal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/Dashboard/Product/Product.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Dashboard/Product/Product.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +31,12 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
   </component>
   <component name="ProjectId" id="1W81W6IrWvm884nDCP1dGdvh3Hz" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -114,6 +128,14 @@
       <workItem from="1579730054440" duration="931000" />
       <workItem from="1579733812955" duration="14181000" />
       <workItem from="1579810198803" duration="6703000" />
+      <workItem from="1580180713075" duration="1956000" />
+      <workItem from="1580183121848" duration="1000" />
+      <workItem from="1580257906392" duration="304000" />
+      <workItem from="1580346897765" duration="4764000" />
+      <workItem from="1580355987014" duration="3512000" />
+      <workItem from="1580420815770" duration="3714000" />
+      <workItem from="1580434019524" duration="1574000" />
+      <workItem from="1580675539962" duration="553000" />
     </task>
     <servers />
   </component>

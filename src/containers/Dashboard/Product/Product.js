@@ -6,6 +6,7 @@ import {Card, Col, Row, Spin,Input,Button,Icon} from "antd";
 import ProductAddModal from "../../../components/UI/AddProductModal/AddProductModal";
 import EditProductModal from "../../../components/UI/EditProductModal/EditProductModal";
 import GeneralConfirmModal from "../../../components/UI/GeneralConfirmModal/GeneralConfirmModal";
+import ProductPreviewModal from "../../../components/UI/ProductPreviewModal/ProductPreviewModal";
 const {Search} = Input;
 class Product extends Component{
 
@@ -18,6 +19,8 @@ class Product extends Component{
         AddProductModalVisible: false,
         EditProductModalVisible: false,
         DeleteProductModalVisible: false,
+        ProductPreviewModalVisible: false,
+        SelectImage: [],
         productDelete:{
             code: "",
             id:""
@@ -127,6 +130,23 @@ class Product extends Component{
         })
     }
 
+
+    hideProductPreviewModal = () =>{
+        this.setState({
+            ProductPreviewModalVisible: false,
+        })
+    };
+
+    openProductPreviewModal =(images)=>{
+        this.setState({
+            SelectImage: images
+        },()=>{
+            this.setState({
+                ProductPreviewModalVisible: true
+            })
+        })
+    };
+
     componentWillUnmount =() => {
         this.setState = state=>{
             return;
@@ -230,7 +250,7 @@ class Product extends Component{
                                                     <a onClick={()=>{this.openProductEditModal(s)}}>Edit</a>
                                                 </Fragment>
                                             }>
-                                            <img style={{width:"100%",height:"150px"}} alt="" src={`${s.image}`}/>
+                                            <a onClick={()=>{this.openProductPreviewModal(s.image)}}><img style={{width:"100%",height:"150px"}} alt="" src={`${s.image[0]}`}/></a>
                                         </Card>
                                     </Col>
                                 )
@@ -243,7 +263,7 @@ class Product extends Component{
                     visible={this.state.AddProductModalVisible} productCategoryId={this.props.match.params.productCategoryId}
                     isLoading={this.state.isLoading} hideModal={this.hideProductAddModal} AddProduct={this.AddProductHandler}
                 />
-                
+
 
                 <EditProductModal
                     visible={this.state.EditProductModalVisible} hideModal={this.hideProductEditModal}
@@ -257,6 +277,9 @@ class Product extends Component{
                     hideModal={this.hideDeleteProductModal}
                     isLoading={this.state.isLoading}
                     text={`Are sure to delete ${this.state.productDelete.code}`}
+                />
+                <ProductPreviewModal
+                    visible={this.state.ProductPreviewModalVisible} hideModal={this.hideProductPreviewModal} image={this.state.SelectImage}
                 />
             </Fragment>
         )

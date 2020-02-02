@@ -40,7 +40,10 @@ const EditProductModal = Form.create({name:"edit_product_modal"})(
                 fdata.append('product_category_id', this.props.productCategoryId);
                 if (values.image.length !== 0){
                     if (values.image[0].response.is_success){
-                        fdata.append("image",values.image[0].response.data)
+                        const images = values.image.map(s=>{
+                            return s.response.data
+                        });
+                        fdata.append("image",images)
                     }else{
                         fdata.append("image",this.props.values.image)
                     }
@@ -242,7 +245,7 @@ const EditProductModal = Form.create({name:"edit_product_modal"})(
                                         initialValue: []
                                     })(
                                         <Upload action={UploadImage} name="image" listType="picture">
-                                            {this.state.imageFileList.length===0?(<Button>
+                                            {this.state.imageFileList.length!==4?(<Button>
                                                 <Icon type="upload" /> Click to upload
                                             </Button>):null}
                                         </Upload>

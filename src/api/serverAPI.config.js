@@ -5,7 +5,7 @@
  **/
 import config from '../config'
 
-const HOST = config.Host;
+const HOST = config.TestHost;
 
 const url = {
     Login: HOST + '/api/login',
@@ -83,7 +83,8 @@ const url = {
     },
     UpdateAbout: (id) =>{
         return HOST + '/api/about/' + id
-    }
+    },
+    SendEmailToLocalClient: HOST + '/api/contact/local_client'
 };
 
 export default url

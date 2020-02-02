@@ -35,12 +35,15 @@ const ProductAddModal = Form.create({name:"product_add_modal"})(
                     fdata.append('product_category_id', this.props.productCategoryId);
                     if (values.image.length !== 0){
                         if (values.image[0].response.is_success){
-                            fdata.append("image",values.image[0].response.data)
+                            const images = values.image.map(s=>{
+                                return s.response.data
+                            })
+                            fdata.append("image",images)
                         }else{
-                            fdata.append("image","")
+                            fdata.append("image",[])
                         }
                     }else{
-                        fdata.append("image","")
+                        fdata.append("image",[])
                     }
                     fdata.append('price',"contact us")
                     fdata.append('price_cn', "联系我们")
@@ -217,10 +220,11 @@ const ProductAddModal = Form.create({name:"product_add_modal"})(
                                     {getFieldDecorator('image', {
                                         valuePropName: 'image',
                                         getValueFromEvent: this.imageFile,
-                                        initialValue: []
+                                        initialValue: [],
+                                        rules: [{ required: true, message: 'Please upload the Image!' }],
                                     })(
                                         <Upload action={UploadImage} name="image" listType="picture">
-                                            {this.state.imageFileList.length===0?(<Button>
+                                            {this.state.imageFileList.length!==4?(<Button>
                                                 <Icon type="upload" /> Click to upload
                                             </Button>):null}
                                         </Upload>
