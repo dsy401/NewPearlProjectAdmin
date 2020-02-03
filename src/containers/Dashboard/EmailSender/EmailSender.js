@@ -5,7 +5,7 @@ import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import ImageUploader from "../../../utils/ImageUploader";
 import {Input,Button} from 'antd'
 import GeneralConfirmModal from "../../../components/UI/GeneralConfirmModal/GeneralConfirmModal";
-import {SendEmailToLocalClient} from "../../../api/api";
+import {SendEmailToLocalClient, SendTestEmailToPeople} from "../../../api/api";
 
 
 class EmailSender extends Component{
@@ -13,7 +13,8 @@ class EmailSender extends Component{
         content: "",
         subject: "",
         isLoading: false,
-        confirmModalVisible: false
+        confirmModalVisible: false,
+        test_email: ""
     };
 
     EditorOnChange = (event,editor)=>{
@@ -49,6 +50,28 @@ class EmailSender extends Component{
         }).catch(err=>{
             console.log(err)
             this.setState({isLoading:false})
+        })
+    };
+
+    TemplateTestSend = () =>{
+        if (this.state.test_email === "" || this.state.test_email.length <= 5){
+            return;
+        }
+
+        const fdata = new FormData()
+        fdata.append('subject',this.state.subject);
+        fdata.append('content',this.state.content);
+        fdata.append('target_email',this.state.test_email)
+        this.setState({isLoading:true})
+        SendTestEmailToPeople(fdata).then(res=>{
+            this.setState({isLoading:false},()=>{
+                alert(res.data)
+            })
+        }).catch(err=>{
+            console.log(err)
+            this.setState({
+                isLoading:false
+            })
         })
     };
 
@@ -95,7 +118,17 @@ class EmailSender extends Component{
                         />
                     </div>
                     <div style={{paddingTop: 30}}>
-                        <Button onClick={this.SendToAllButtonClickHandler} type="primary">
+                        <Input onChange={(event => {
+                            this.setState({
+                                test_email: event.target.value
+                            })
+                        })} value={this.state.test_email} placeholder="Enter the email recipient to test template ..."/>
+                        <Button onClick={this.TemplateTestSend} loading={this.state.isLoading} style={{marginTop: 10}} type="primary">
+                            Send
+                        </Button>
+                    </div>
+                    <div style={{paddingTop: 30}}>
+                        <Button onClick={this.SendToAllButtonClickHandler} disabled={this.state.isLoading} type="primary">
                             Send To All
                         </Button>
                     </div>

@@ -374,3 +374,14 @@ export const SendEmailToLocalClient = (data) =>{
         }
     })
 }
+
+export const SendTestEmailToPeople = (data) =>{
+    return server({
+        method: "POST",
+        url: url.SendTestEmailToPeople,
+        data:data,
+        headers: {
+            Authorization: ' Basic '+ Base64Encoder(localStorage.getItem('token'))
+        }
+    })
+}
