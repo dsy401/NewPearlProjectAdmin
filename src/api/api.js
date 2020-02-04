@@ -385,3 +385,13 @@ export const SendTestEmailToPeople = (data) =>{
         }
     })
 }
+
+export const GetLocalClientByPageNumber = (num) =>{
+    return server({
+        method: "GET",
+        url: url.GetLocalClientByPageNumber(num),
+        headers:{
+            Authorization: ' Basic '+ Base64Encoder(localStorage.getItem('token'))
+        }
+    })
+}

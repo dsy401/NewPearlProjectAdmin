@@ -5,7 +5,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/api.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/serverAPI.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/serverAPI.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/Dashboard/EmailSender/EmailSender.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Dashboard/EmailSender/EmailSender.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UI/LocalClientAddModal/LocalClientAddModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/LocalClientAddModal/LocalClientAddModal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/Dashboard/LocalClient/LocalClient.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Dashboard/LocalClient/LocalClient.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,7 +130,10 @@
       <workItem from="1580420815770" duration="3714000" />
       <workItem from="1580434019524" duration="1574000" />
       <workItem from="1580675539962" duration="1795000" />
-      <workItem from="1580694142050" duration="2130000" />
+      <workItem from="1580694142050" duration="2371000" />
+      <workItem from="1580769255359" duration="188000" />
+      <workItem from="1580772654973" duration="12000" />
+      <workItem from="1580772712360" duration="5322000" />
     </task>
     <servers />
   </component>
@@ -188,11 +192,11 @@
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="147" y="23" width="1224" height="649" key="dock-window-1/-1920.23.1920.979/0.23.1680.1027@-1920.23.1920.979" timestamp="1578544928574" />
-    <state x="-1281" y="230" width="670" height="678" key="run.anything.popup" timestamp="1580681991310">
-      <screen x="-1920" y="23" width="1920" height="982" />
+    <state x="-1281" y="229" key="run.anything.popup" timestamp="1580782751747">
+      <screen x="-1920" y="23" width="1920" height="980" />
     </state>
     <state x="-1281" y="229" width="670" height="675" key="run.anything.popup/-1920.23.1920.979/0.23.1680.1027@-1920.23.1920.979" timestamp="1578878384912" />
-    <state x="-1281" y="229" key="run.anything.popup/-1920.23.1920.980/0.23.1680.1027@-1920.23.1920.980" timestamp="1578545818964" />
+    <state x="-1281" y="229" key="run.anything.popup/-1920.23.1920.980/0.23.1680.1027@-1920.23.1920.980" timestamp="1580782751747" />
     <state x="-1281" y="230" width="670" height="678" key="run.anything.popup/-1920.23.1920.982/0.23.1680.1027@-1920.23.1920.982" timestamp="1580681991310" />
     <state x="-1281" y="249" width="670" height="730" key="search.everywhere.popup" timestamp="1579649406119">
       <screen x="-1920" y="23" width="1920" height="1057" />

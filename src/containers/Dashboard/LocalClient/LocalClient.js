@@ -1,7 +1,7 @@
 import {Table, Input, Popconfirm, Form, Button} from 'antd';
 import React,{Fragment} from 'react'
 import DashboardBody from "../../../components/common/DashboardBody/DashboardBody";
-import {DeleteLocalClient,GetLocalClient,UpdateLocalClient} from "../../../api/api";
+import {DeleteLocalClient, GetLocalClientByPageNumber, UpdateLocalClient} from "../../../api/api";
 import {connect} from 'react-redux'
 import LocalClientAddModal from "../../../components/UI/LocalClientAddModal/LocalClientAddModal";
 const EditableContext = React.createContext();
@@ -53,16 +53,18 @@ class EditableTable extends React.Component {
         this.setState({
             loading: true
         })
-        GetLocalClient().then(res=>{
+        GetLocalClientByPageNumber(this.state.current_page_num).then(res=>{
             this.setState({
                 loading: false
             },()=>{
-                this.setState({data:
-                        res.data.map((s)=>{
+                this.setState({
+                    data:
+                        res.data.data.map((s)=>{
                             return (
                                 {name: s.name, phone:s.phone, address: s.address,email:s.email,key: s._id.$oid}
                             )
-                        })
+                        }),
+                    total: res.data.total
                 })
             })
         }).catch(err=>{
@@ -97,7 +99,9 @@ class EditableTable extends React.Component {
             data:[],
             modalVisible: false,
             editingKey: '',
-            loading: false
+            loading: false,
+            total: 1,
+            current_page_num: 1
         };
         this.columns = [
             {
@@ -164,15 +168,15 @@ class EditableTable extends React.Component {
     DeleteHandler = (id) =>{
         this.setState({loading:true})
         DeleteLocalClient(id).then(res=>{
-            this.setState({loading:false},()=>{
-                this.setState({
-                    data: res.data.map((s)=>{
-                        return (
-                            {name: s.name, phone:s.phone, address: s.address,email:s.email,key: s._id.$oid}
-                        )
-                    })
+            if (this.state.data.length === 1){
+                this.setState({loading:false,current_page_num:this.state.current_page_num-1},()=>{
+                    this.refreshPage()
                 })
-            })
+            }else{
+                this.setState({loading:false},()=>{
+                    this.refreshPage()
+                })
+            }
 
         }).catch(err=>{
             this.setState({loading:false})
@@ -183,6 +187,35 @@ class EditableTable extends React.Component {
     cancel = () => {
         this.setState({ editingKey: '' });
     };
+
+
+    pageChange = (page,size) =>{
+        this.setState({
+            loading: true
+        })
+        GetLocalClientByPageNumber(page).then(res=>{
+            this.setState({
+                loading: false
+            },()=>{
+                this.setState({
+                    data:
+                        res.data.data.map((s)=>{
+                            return (
+                                {name: s.name, phone:s.phone, address: s.address,email:s.email,key: s._id.$oid}
+                            )
+                        }),
+                    total: res.data.total,
+                    current_page_num: page,
+                    editingKey: '',
+                })
+            })
+        }).catch(err=>{
+            this.setState({
+                loading: false
+            })
+            alert("Server Error")
+        })
+    }
 
     save(form, key) {
         form.validateFields((error, row) => {
@@ -198,12 +231,9 @@ class EditableTable extends React.Component {
             UpdateLocalClient(key,fdata).then(res=>{
                 this.setState({loading:false},()=>{
                     this.setState({
-                        data: res.data.map((s)=>{
-                            return (
-                                {name: s.name, phone:s.phone, address: s.address,email:s.email,key: s._id.$oid}
-                            )
-                        }),
                         editingKey: ''
+                    },()=>{
+                        this.refreshPage()
                     });
                 })
 
@@ -224,6 +254,35 @@ class EditableTable extends React.Component {
     closeLotteryAddModal = () =>{
         this.setState({modalVisible:false})
     }
+
+
+    refreshPage = () =>{
+
+        this.setState({
+            loading: true
+        })
+        GetLocalClientByPageNumber(this.state.current_page_num).then(res=>{
+            this.setState({
+                loading: false
+            },()=>{
+                this.setState({
+                    data:
+                        res.data.data.map((s)=>{
+                            return (
+                                {name: s.name, phone:s.phone, address: s.address,email:s.email,key: s._id.$oid}
+                            )
+                        }),
+                    total: res.data.total,
+                })
+            })
+        }).catch(err=>{
+            this.setState({
+                loading: false
+            })
+            alert("Server Error")
+        })
+    }
+
     render() {
         const components = {
             body: {
@@ -254,7 +313,7 @@ class EditableTable extends React.Component {
                 <Button onClick={this.openLotteryAddModal} type="primary" style={{ marginBottom: 16 }}>
                     Add a row
                 </Button>
-                <LocalClientAddModal closeModal={this.closeLotteryAddModal} visible={this.state.modalVisible}/>
+                <LocalClientAddModal refreshPage={this.refreshPage} closeModal={this.closeLotteryAddModal} visible={this.state.modalVisible}/>
                 <Table
                     loading={this.state.loading}
                     components={components}
@@ -263,7 +322,10 @@ class EditableTable extends React.Component {
                     columns={columns}
                     rowClassName="editable-row"
                     pagination={{
-                        onChange: this.cancel,
+                        defaultPageSize: 10,
+                        onChange: this.pageChange,
+                        total: this.state.total,
+                        current: this.state.current_page_num
                     }}
                 />
             </EditableContext.Provider>

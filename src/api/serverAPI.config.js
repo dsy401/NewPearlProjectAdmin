@@ -5,7 +5,7 @@
  **/
 import config from '../config'
 
-const HOST = config.Host;
+const HOST = config.TestHost;
 
 const url = {
     Login: HOST + '/api/login',
@@ -85,7 +85,10 @@ const url = {
         return HOST + '/api/about/' + id
     },
     SendEmailToLocalClient: HOST + '/api/contact/local_client',
-    SendTestEmailToPeople: HOST+ '/api/contact/local_client/test'
+    SendTestEmailToPeople: HOST+ '/api/contact/local_client/test',
+    GetLocalClientByPageNumber: (num) =>{
+        return HOST+ "/api/local_client/pagination/"+ num
+    }
 };
 
 export default url

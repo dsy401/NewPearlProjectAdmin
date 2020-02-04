@@ -21,7 +21,7 @@ const AddLotteryForm = (props) =>{
                         props.setIsLoading(false)
                         setTimeout(()=>{
                             props.closeModal()
-                            props.SetData(res.data)
+                            props.refreshPage()
                         },300)
 
                     }).catch(error=>{
@@ -105,7 +105,7 @@ const LocalClientAddModal = (props) =>{
             onCancel={props.closeModal}
             footer={[]}
         >
-            <AddLotteryFormTemplate isLoading={isLoading} submit={HandleOk} setIsLoading={setIsLoading} closeModal={props.closeModal}/>
+            <AddLotteryFormTemplate refreshPage={props.refreshPage} isLoading={isLoading} submit={HandleOk} setIsLoading={setIsLoading} closeModal={props.closeModal}/>
         </Modal>
     )
 };
