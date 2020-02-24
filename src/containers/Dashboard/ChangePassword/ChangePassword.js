@@ -55,7 +55,7 @@ class ChangePassword extends Component{
           } else {
               this.setState({
                   newpassword:value
-              })
+              });
             callback();
           }
         callback();

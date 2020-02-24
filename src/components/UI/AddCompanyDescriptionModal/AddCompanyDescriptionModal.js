@@ -32,7 +32,7 @@ const AddCompanyDescription = Form.create({name:"add_company_description"})(
                         }else{
                             fdata.append(key,values[key])
                         }
-                    })
+                    });
 
                     if (values.image.length !== 0){
                         if (values.image[0].response.is_success){

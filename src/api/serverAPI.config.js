@@ -88,6 +88,22 @@ const url = {
     SendTestEmailToPeople: HOST+ '/api/contact/local_client/test',
     GetLocalClientByPageNumber: (num) =>{
         return HOST+ "/api/local_client/pagination/"+ num
+    },
+    GetMemberByPageNumber: (num) =>{
+        return HOST + '/api/member/pagination/' + num
+    },
+    SearchMemberByPhoneNumber: (phone) =>{
+        return HOST + '/api/member/search/' + phone
+    },
+    AddMember: HOST + '/api/member',
+    AddPointToMember: (id,point)=>{
+        return HOST + '/api/member/add_point/' + id + '/' + point
+    },
+    UsePointToMember: (id,point) =>{
+        return HOST + '/api/member/use_point/' + id + '/' + point
+    },
+    GetMemberTransaction: (member_id) =>{
+        return HOST + '/api/member_transaction/' + member_id
     }
 };
 

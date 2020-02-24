@@ -37,7 +37,7 @@ const ProductAddModal = Form.create({name:"product_add_modal"})(
                         if (values.image[0].response.is_success){
                             const images = values.image.map(s=>{
                                 return s.response.data
-                            })
+                            });
                             fdata.append("image",images)
                         }else{
                             fdata.append("image",[])

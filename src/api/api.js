@@ -19,7 +19,7 @@ export const ChangePassWord=(data,id)=>{
             Authorization: ' Basic '+ Base64Encoder(localStorage.getItem('token'))
         }
     })
-}
+};
 
 
 export const GetLottery = () =>{
@@ -178,7 +178,7 @@ export const GetProductCategory = () =>{
 
 export const UploadImage = () =>{
     return url.UploadImage
-}
+};
 
 export const UpdateProductCategory = (id,data) =>{
     return server({
@@ -246,7 +246,7 @@ export const UpdateProduct = (id,data)=>{
             Authorization: ' Basic '+ Base64Encoder(localStorage.getItem('token'))
         }
     })
-}
+};
 
 export const AddStaff = (data) =>{
     return server({
@@ -257,7 +257,7 @@ export const AddStaff = (data) =>{
         },
         data:data,
     })
-}
+};
 
 export const DeleteStaff = (id) =>{
     return server({
@@ -267,7 +267,7 @@ export const DeleteStaff = (id) =>{
             Authorization: ' Basic '+ Base64Encoder(localStorage.getItem('token'))
         }
     })
-}
+};
 
 export const DeleteProduct = (id) =>{
     return server({
@@ -288,14 +288,14 @@ export const AddNews = (data) =>{
             Authorization: ' Basic '+ Base64Encoder(localStorage.getItem('token'))
         }
     })
-}
+};
 
 export const GetNews = () =>{
     return server({
         method: "GET",
         url: url.GetNews
     })
-}
+};
 
 export const DeleteNews = (id) =>{
     return server({
@@ -305,7 +305,7 @@ export const DeleteNews = (id) =>{
             Authorization: ' Basic '+ Base64Encoder(localStorage.getItem('token'))
         }
     })
-}
+};
 
 export const GetNewsContent = (id) =>{
     return server({
@@ -323,14 +323,14 @@ export const UpdateNews = (data) =>{
             Authorization: ' Basic '+ Base64Encoder(localStorage.getItem('token'))
         }
     })
-}
+};
 
 export const GetAbout = () =>{
     return server({
         method:"GET",
         url: url.GetAbout
     })
-}
+};
 
 export const AddAbout = (data) =>{
     return server({
@@ -341,7 +341,7 @@ export const AddAbout = (data) =>{
             Authorization: ' Basic '+ Base64Encoder(localStorage.getItem('token'))
         }
     })
-}
+};
 
 export const DeleteAbout = (id) =>{
     return server({
@@ -351,7 +351,7 @@ export const DeleteAbout = (id) =>{
             Authorization: ' Basic '+ Base64Encoder(localStorage.getItem('token'))
         }
     })
-}
+};
 
 export const UpdateAbout = (id,data) =>{
     return server({
@@ -362,7 +362,7 @@ export const UpdateAbout = (id,data) =>{
             Authorization: ' Basic '+ Base64Encoder(localStorage.getItem('token'))
         }
     })
-}
+};
 
 export const SendEmailToLocalClient = (data) =>{
     return server({
@@ -373,7 +373,7 @@ export const SendEmailToLocalClient = (data) =>{
             Authorization: ' Basic '+ Base64Encoder(localStorage.getItem('token'))
         }
     })
-}
+};
 
 export const SendTestEmailToPeople = (data) =>{
     return server({
@@ -384,12 +384,75 @@ export const SendTestEmailToPeople = (data) =>{
             Authorization: ' Basic '+ Base64Encoder(localStorage.getItem('token'))
         }
     })
-}
+};
 
 export const GetLocalClientByPageNumber = (num) =>{
     return server({
         method: "GET",
         url: url.GetLocalClientByPageNumber(num),
+        headers:{
+            Authorization: ' Basic '+ Base64Encoder(localStorage.getItem('token'))
+        }
+    })
+};
+
+export const GetMemberByPageNumber =(num) =>{
+    return server({
+        method: "GET",
+        url: url.GetMemberByPageNumber(num),
+        headers:{
+            Authorization: ' Basic '+ Base64Encoder(localStorage.getItem('token'))
+        }
+    })
+};
+
+
+export const SearchMemberByPhoneNumber = (phone) =>{
+    return server({
+        method: "GET",
+        url: url.SearchMemberByPhoneNumber(phone),
+        headers:{
+            Authorization: ' Basic '+ Base64Encoder(localStorage.getItem('token'))
+        }
+    })
+};
+
+export const AddMember = (data) =>{
+    return server({
+        method: "POST",
+        url: url.AddMember,
+        headers:{
+            Authorization: ' Basic '+ Base64Encoder(localStorage.getItem('token'))
+        },
+        data:data,
+    })
+};
+
+export const AddPointToMember = (id,point) =>{
+    return server({
+        method: "POST",
+        url: url.AddPointToMember(id,point),
+        headers:{
+            Authorization: ' Basic '+ Base64Encoder(localStorage.getItem('token'))
+        }
+    })
+};
+
+export const UsePointToMember = (id,point)=>{
+    return server({
+        method: "POST",
+        url: url.UsePointToMember(id,point),
+        headers:{
+            Authorization: ' Basic '+ Base64Encoder(localStorage.getItem('token'))
+        }
+    })
+};
+
+
+export const GetMemberTransaction = (id) =>{
+    return server({
+        method: "GET",
+        url: url.GetMemberTransaction(id),
         headers:{
             Authorization: ' Basic '+ Base64Encoder(localStorage.getItem('token'))
         }

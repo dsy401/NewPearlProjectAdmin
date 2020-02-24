@@ -2,7 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6147ab0d-39d3-4044-922e-9c4e28734021" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/UI/AddMemberModal/AddMemberModal.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/UI/MemberActionModal/MemberActionModal.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/UI/MemberSearchModal/MemberSearchModal.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/common/MemberDescription/MemberDescription.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/containers/Dashboard/Member/Member.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/containers/Dashboard/Member/MemberList/MemberList.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/containers/Dashboard/MemberTransaction/MemberTransaction.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/containers/Dashboard/Tracking/Tracking.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Route/DashboardRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Route/DashboardRoute.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/serverAPI.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/serverAPI.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UI/AddCompanyDescriptionModal/AddCompanyDescriptionModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/AddCompanyDescriptionModal/AddCompanyDescriptionModal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UI/AddProductModal/AddProductModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/AddProductModal/AddProductModal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/Dashboard/ChangePassword/ChangePassword.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Dashboard/ChangePassword/ChangePassword.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,7 +144,19 @@
       <workItem from="1580769255359" duration="188000" />
       <workItem from="1580772654973" duration="12000" />
       <workItem from="1580772712360" duration="5694000" />
-      <workItem from="1580786497428" duration="790000" />
+      <workItem from="1580786497428" duration="1094000" />
+      <workItem from="1580850618869" duration="4184000" />
+      <workItem from="1581542055475" duration="478000" />
+      <workItem from="1581642455731" duration="2178000" />
+      <workItem from="1581891373361" duration="13171000" />
+      <workItem from="1582143384834" duration="11366000" />
+      <workItem from="1582166545963" duration="1000" />
+      <workItem from="1582167484598" duration="24000" />
+      <workItem from="1582231010943" duration="1562000" />
+      <workItem from="1582506881749" duration="5853000" />
+      <workItem from="1582513464677" duration="6647000" />
+      <workItem from="1582574840345" duration="630000" />
+      <workItem from="1582575496218" duration="3421000" />
     </task>
     <servers />
   </component>
@@ -185,6 +211,10 @@
     <state width="1632" height="255" key="GridCell.Tab.0.right/-1920.23.1920.979/0.23.1680.1027@-1920.23.1920.979" timestamp="1578544924506" />
     <state width="1632" height="255" key="GridCell.Tab.0.right/-1920.23.1920.979/0.23.1680.1027@0.23.1680.1027" timestamp="1578609879283" />
     <state width="1632" height="255" key="GridCell.Tab.0.right/-1920.23.1920.980/0.23.1680.1027@-1920.23.1920.980" timestamp="1578546391275" />
+    <state x="-1312" y="243" key="IDE.errors.dialog" timestamp="1581906609864">
+      <screen x="-1920" y="23" width="1920" height="992" />
+    </state>
+    <state x="-1312" y="243" key="IDE.errors.dialog/-1920.23.1920.992/0.23.1680.1027@-1920.23.1920.992" timestamp="1581906609864" />
     <state x="147" y="23" width="1224" height="649" key="dock-window-1" timestamp="1578544928574">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
@@ -195,11 +225,13 @@
     <state x="-1281" y="229" width="670" height="675" key="run.anything.popup/-1920.23.1920.979/0.23.1680.1027@-1920.23.1920.979" timestamp="1578878384912" />
     <state x="-1281" y="229" key="run.anything.popup/-1920.23.1920.980/0.23.1680.1027@-1920.23.1920.980" timestamp="1580782751747" />
     <state x="-1281" y="230" width="670" height="678" key="run.anything.popup/-1920.23.1920.982/0.23.1680.1027@-1920.23.1920.982" timestamp="1580681991310" />
-    <state x="-1281" y="249" width="670" height="730" key="search.everywhere.popup" timestamp="1579649406119">
-      <screen x="-1920" y="23" width="1920" height="1057" />
+    <state x="-1281" y="235" width="670" height="689" key="search.everywhere.popup" timestamp="1582511802822">
+      <screen x="-1920" y="23" width="1920" height="995" />
     </state>
     <state x="-1281" y="249" width="670" height="730" key="search.everywhere.popup/-1920.23.1920.1057/0.23.1680.960@-1920.23.1920.1057" timestamp="1579649406119" />
     <state x="-1281" y="232" width="670" height="676" key="search.everywhere.popup/-1920.23.1920.979/0.23.1680.1027@-1920.23.1920.979" timestamp="1578959546853" />
+    <state x="-1281" y="234" width="670" height="684" key="search.everywhere.popup/-1920.23.1920.989/0.23.1680.1027@-1920.23.1920.989" timestamp="1582154878482" />
+    <state x="-1281" y="235" width="670" height="689" key="search.everywhere.popup/-1920.23.1920.995/0.23.1680.1027@-1920.23.1920.995" timestamp="1582511802822" />
     <state x="2319" y="249" width="670" height="730" key="search.everywhere.popup/1680.23.1920.1057/0.23.1680.956@1680.23.1920.1057" timestamp="1578721254348" />
     <state x="-1211" y="369" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1579820186675">
       <screen x="-1920" y="23" width="1920" height="1057" />

@@ -12,6 +12,9 @@ import News from "../containers/Dashboard/Publish/Publish";
 import NewsInfo from "../containers/Dashboard/NewsInfo/NewsInfo";
 import NewsEdit from "../containers/Dashboard/NewsEdit/NewsEdit";
 import EmailSender from "../containers/Dashboard/EmailSender/EmailSender";
+import Tracking from "../containers/Dashboard/Tracking/Tracking";
+import Member from "../containers/Dashboard/Member/Member";
+import MemberTransaction from "../containers/Dashboard/MemberTransaction/MemberTransaction";
 
 const match = "/dashboard";
 export const DashboardRoute = [
@@ -94,10 +97,28 @@ export const DashboardRoute = [
         pos:null
     },
     {
+        name: "Member Transaction",
+        component: MemberTransaction,
+        path: match + '/membertransaction/:memberId',
+        pos: null
+    },
+    {
         name: "Email",
         component: EmailSender,
         path: match + '/email',
         pos: 10
+    },
+    {
+        name: "Tracking",
+        component: Tracking,
+        path: match + '/tracking',
+        pos: 11
+    },
+    {
+        name: "Member",
+        component: Member,
+        path: match + '/member',
+        pos: 12
     }
 ];
 
@@ -190,6 +211,20 @@ export const menu = [
                 icon: 'mail',
                 path: match + '/email',
                 pos: 10
+            },
+            {
+                name: "Tracking",
+                component: Tracking,
+                icon: 'clock-circle',
+                path: match + '/tracking',
+                pos: 11
+            },
+            {
+                name: "Member",
+                component: Member,
+                icon: 'team',
+                path: match + '/member',
+                pos: 12
             }
         ]
     }
