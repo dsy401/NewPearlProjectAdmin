@@ -5,7 +5,7 @@
  **/
 import config from '../config'
 
-const HOST = config.TestHost;
+const HOST = config.Host;
 
 const url = {
     Login: HOST + '/api/login',
