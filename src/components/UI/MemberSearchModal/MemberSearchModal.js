@@ -23,6 +23,7 @@ const MemberSearchModal = Form.create({name:"member_search_modal"})(
                             email: s.email,
                             address: s.address,company: s.company,
                             point:s.point,end_date: moment(s.end_date.$date).format('L'),
+                            member_level: s.member_level
                         }
                     ,
                     isLoading:false

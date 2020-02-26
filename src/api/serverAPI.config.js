@@ -96,14 +96,17 @@ const url = {
         return HOST + '/api/member/search/' + phone
     },
     AddMember: HOST + '/api/member',
-    AddPointToMember: (id,point)=>{
-        return HOST + '/api/member/add_point/' + id + '/' + point
-    },
-    UsePointToMember: (id,point) =>{
-        return HOST + '/api/member/use_point/' + id + '/' + point
+    MemberSpend: (id,amount,use_point)=>{
+        return HOST + '/api/member/spend/' + id + '/' + amount + '/' +use_point
     },
     GetMemberTransaction: (member_id) =>{
         return HOST + '/api/member_transaction/' + member_id
+    },
+    EditMember: (id)=>{
+        return HOST + '/api/member/' + id
+    },
+    DeleteMember: (id) =>{
+        return HOST + '/api/member/' + id
     }
 };
 

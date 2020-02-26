@@ -1,10 +1,13 @@
 import { Table, Button } from 'antd';
 import React, {Component} from 'react'
-import {AddMember, GetMemberByPageNumber} from "../../../../api/api";
+import {AddMember, DeleteMember, EditMember, GetMemberByPageNumber} from "../../../../api/api";
 import moment from 'moment'
 import MemberSearchModal from "../../../../components/UI/MemberSearchModal/MemberSearchModal";
 import AddMemberModal from "../../../../components/UI/AddMemberModal/AddMemberModal";
 import MemberActionModal from "../../../../components/UI/MemberActionModal/MemberActionModal";
+import {MemberLevelConverter} from "../../../../utils/MemberLevelConverter";
+import MemberEditModal from "../../../../components/UI/MemberEditModal/MemberEditModal";
+import GeneralConfirmModal from "../../../../components/UI/GeneralConfirmModal/GeneralConfirmModal";
 
 
 class MemberList extends Component {
@@ -18,12 +21,12 @@ class MemberList extends Component {
             dataIndex: 'phone',
         },
         {
-            title: 'Email',
-            dataIndex: 'email',
-        },
-        {
             title: "Point",
             dataIndex: 'point'
+        },
+        {
+          title: "Level",
+          dataIndex: 'member_level',
         },
         {
             title: 'End Date',
@@ -43,6 +46,27 @@ class MemberList extends Component {
                     }
                 }>View</a>
             )
+        },
+        {
+            title: "Action",
+            key: "action",
+            render: (text,record)=>(
+                <div>
+                    <a onClick={()=>{
+                        this.setState({
+                            EditMemberData: text
+                        },()=>{
+                            this.EditModalOpen()
+                        })
+                    }} style={{marginRight:5}}>Edit</a>
+                    <a onClick={()=>{
+                        this.setState({
+                            DeleteMemberModalVisible: true,
+                            DeleteId: text.key
+                        })
+                    }}>Delete</a>
+                </div>
+            )
         }
     ];
 
@@ -60,6 +84,7 @@ class MemberList extends Component {
                         email: s.email,
                         address: s.address,company: s.company,
                         point:s.point,end_date: moment(s.end_date.$date).format('L'),
+                        member_level: MemberLevelConverter(s.member_level),total_consumption: s.total_consumption
                     }
                 }),
                 total: res.data.total,
@@ -88,7 +113,17 @@ class MemberList extends Component {
         searchModalVisible: false,
         AddMemberModalVisible: false,
         MemberActionModalVisible:false,
-        ActionModalMemberData:null
+        ActionModalMemberData:null,
+        EditMemberModalVisible: false,
+        DeleteMemberModalVisible:false,
+        DeleteId: "",
+        EditMemberData: {
+            key: "",
+            name: "",
+            phone: "",
+            email: "",
+            company: ""
+        }
     };
 
 
@@ -106,7 +141,8 @@ class MemberList extends Component {
                         return {key: s._id.$oid,name: s.name,phone: s.phone,
                             address: s.address,company: s.company,
                             email: s.email,
-                            point:s.point,end_date: moment(s.end_date.$date).format('L')
+                            point:s.point,end_date: moment(s.end_date.$date).format('L'),member_level: MemberLevelConverter(s.member_level),
+                            total_consumption:s.total_consumption
                         }
                     }),
                     total: res.data.total,
@@ -153,7 +189,7 @@ class MemberList extends Component {
     };
 
     AddMemberHandler = (model) =>{
-        this.setState({loading: true})
+        this.setState({loading: true});
         AddMember(model).then(res=>{
             this.setState({
                 loading: false,
@@ -181,6 +217,54 @@ class MemberList extends Component {
     OpenMemberActionModal = () =>{
         this.setState({
             MemberActionModalVisible: true
+        })
+    };
+
+    EditMemberModalClose = (cb) =>{
+        this.setState({
+            EditMemberModalVisible:false
+        },()=>{
+            cb()
+        })
+    };
+
+    EditModalOpen = () =>{
+        this.setState({
+            EditMemberModalVisible: true
+        })
+    };
+
+    EditMemberHandler = (id,model) =>{
+        this.setState({loading: true});
+        EditMember(id,model).then(res=>{
+            this.setState({
+                loading: false,
+                EditMemberModalVisible: false
+            },()=>{
+                this.GetData()
+            })
+        }).catch(err=>{
+            this.setState({
+                loading:false
+            });
+            alert(err.error_message)
+        })
+    };
+
+    DeleteConfirmHandler = () =>{
+        this.setState({loading: true})
+        DeleteMember(this.state.DeleteId).then(res=>{
+            this.setState({
+                loading:false,
+                DeleteMemberModalVisible:false
+            },()=>{
+                this.GetData()
+            })
+        }).catch(err=>{
+            this.setState({
+                loading:false
+            });
+            console.log(err)
         })
     };
 
@@ -223,6 +307,21 @@ class MemberList extends Component {
                     visible={this.state.MemberActionModalVisible}
                     CloseMemberActionModal={this.CloseMemberActionModal}
                     MemberData={this.state.ActionModalMemberData}
+                />
+                <MemberEditModal
+                    visible={this.state.EditMemberModalVisible}
+                    close={this.EditMemberModalClose}
+                    onOk={this.EditMemberHandler}
+                    loading={this.state.loading}
+                    initData={this.state.EditMemberData}
+                />
+                <GeneralConfirmModal
+                    title='Delete Confirmation'
+                    visible={this.state.DeleteMemberModalVisible}
+                    confirm={this.DeleteConfirmHandler}
+                    hideModal={()=>{this.setState({DeleteMemberModalVisible:false})}}
+                    isLoading={this.state.loading}
+                    text='Are you sure to delete this member?'
                 />
             </div>
         );

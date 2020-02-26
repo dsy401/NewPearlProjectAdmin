@@ -2,21 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6147ab0d-39d3-4044-922e-9c4e28734021" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/UI/AddMemberModal/AddMemberModal.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/UI/MemberActionModal/MemberActionModal.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/UI/MemberSearchModal/MemberSearchModal.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/common/MemberDescription/MemberDescription.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/containers/Dashboard/Member/Member.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/containers/Dashboard/Member/MemberList/MemberList.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/containers/Dashboard/MemberTransaction/MemberTransaction.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/containers/Dashboard/Tracking/Tracking.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/UI/MemberEditModal/MemberEditModal.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/MemberLevelConverter.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Route/DashboardRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Route/DashboardRoute.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/api.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/serverAPI.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/serverAPI.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UI/AddCompanyDescriptionModal/AddCompanyDescriptionModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/AddCompanyDescriptionModal/AddCompanyDescriptionModal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UI/AddProductModal/AddProductModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/AddProductModal/AddProductModal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/Dashboard/ChangePassword/ChangePassword.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Dashboard/ChangePassword/ChangePassword.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UI/AddMemberModal/AddMemberModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/AddMemberModal/AddMemberModal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UI/MemberSearchModal/MemberSearchModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/MemberSearchModal/MemberSearchModal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/MemberDescription/MemberDescription.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/MemberDescription/MemberDescription.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/Dashboard/Member/MemberList/MemberList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Dashboard/Member/MemberList/MemberList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/Dashboard/MemberTransaction/MemberTransaction.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Dashboard/MemberTransaction/MemberTransaction.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,7 +151,9 @@
       <workItem from="1582506881749" duration="5853000" />
       <workItem from="1582513464677" duration="6647000" />
       <workItem from="1582574840345" duration="630000" />
-      <workItem from="1582575496218" duration="3421000" />
+      <workItem from="1582575496218" duration="4278000" />
+      <workItem from="1582581950441" duration="6978000" />
+      <workItem from="1582661519089" duration="9431000" />
     </task>
     <servers />
   </component>
@@ -219,17 +216,19 @@
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="147" y="23" width="1224" height="649" key="dock-window-1/-1920.23.1920.979/0.23.1680.1027@-1920.23.1920.979" timestamp="1578544928574" />
-    <state x="-1281" y="229" key="run.anything.popup" timestamp="1580782751747">
-      <screen x="-1920" y="23" width="1920" height="980" />
+    <state x="-1281" y="231" key="run.anything.popup" timestamp="1582678361476">
+      <screen x="-1920" y="23" width="1920" height="991" />
     </state>
     <state x="-1281" y="229" width="670" height="675" key="run.anything.popup/-1920.23.1920.979/0.23.1680.1027@-1920.23.1920.979" timestamp="1578878384912" />
     <state x="-1281" y="229" key="run.anything.popup/-1920.23.1920.980/0.23.1680.1027@-1920.23.1920.980" timestamp="1580782751747" />
     <state x="-1281" y="230" width="670" height="678" key="run.anything.popup/-1920.23.1920.982/0.23.1680.1027@-1920.23.1920.982" timestamp="1580681991310" />
-    <state x="-1281" y="235" width="670" height="689" key="search.everywhere.popup" timestamp="1582511802822">
-      <screen x="-1920" y="23" width="1920" height="995" />
+    <state x="-1281" y="231" key="run.anything.popup/-1920.23.1920.991/0.23.1680.1027@-1920.23.1920.991" timestamp="1582678361476" />
+    <state x="-1281" y="233" width="670" height="684" key="search.everywhere.popup" timestamp="1582666391140">
+      <screen x="-1920" y="23" width="1920" height="987" />
     </state>
     <state x="-1281" y="249" width="670" height="730" key="search.everywhere.popup/-1920.23.1920.1057/0.23.1680.960@-1920.23.1920.1057" timestamp="1579649406119" />
     <state x="-1281" y="232" width="670" height="676" key="search.everywhere.popup/-1920.23.1920.979/0.23.1680.1027@-1920.23.1920.979" timestamp="1578959546853" />
+    <state x="-1281" y="233" width="670" height="684" key="search.everywhere.popup/-1920.23.1920.987/0.23.1680.1027@-1920.23.1920.987" timestamp="1582666391140" />
     <state x="-1281" y="234" width="670" height="684" key="search.everywhere.popup/-1920.23.1920.989/0.23.1680.1027@-1920.23.1920.989" timestamp="1582154878482" />
     <state x="-1281" y="235" width="670" height="689" key="search.everywhere.popup/-1920.23.1920.995/0.23.1680.1027@-1920.23.1920.995" timestamp="1582511802822" />
     <state x="2319" y="249" width="670" height="730" key="search.everywhere.popup/1680.23.1920.1057/0.23.1680.956@1680.23.1920.1057" timestamp="1578721254348" />

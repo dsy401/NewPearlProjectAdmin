@@ -428,25 +428,16 @@ export const AddMember = (data) =>{
     })
 };
 
-export const AddPointToMember = (id,point) =>{
+export const MemberSpend = (id,amount,use_point) =>{
     return server({
         method: "POST",
-        url: url.AddPointToMember(id,point),
+        url: url.MemberSpend(id,amount,use_point),
         headers:{
             Authorization: ' Basic '+ Base64Encoder(localStorage.getItem('token'))
         }
     })
 };
 
-export const UsePointToMember = (id,point)=>{
-    return server({
-        method: "POST",
-        url: url.UsePointToMember(id,point),
-        headers:{
-            Authorization: ' Basic '+ Base64Encoder(localStorage.getItem('token'))
-        }
-    })
-};
 
 
 export const GetMemberTransaction = (id) =>{
@@ -458,3 +449,24 @@ export const GetMemberTransaction = (id) =>{
         }
     })
 }
+
+export const EditMember = (id,data) =>{
+    return server({
+        method: "PUT",
+        url: url.EditMember(id),
+        headers:{
+            Authorization: ' Basic '+ Base64Encoder(localStorage.getItem('token'))
+        },
+        data:data,
+    })
+};
+
+export const DeleteMember = (id) =>{
+    return server({
+        method: "DELETE",
+        url: url.DeleteMember(id),
+        headers:{
+            Authorization: ' Basic '+ Base64Encoder(localStorage.getItem('token'))
+        }
+    })
+};

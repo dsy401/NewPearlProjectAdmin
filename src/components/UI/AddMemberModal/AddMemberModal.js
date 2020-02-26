@@ -5,13 +5,6 @@ import {UploadImage} from '../../../api/api'
 const AddMemberModal = Form.create({name:"add_member_modal"})(
     class extends Component{
 
-        state={
-            imageFileList:[]
-        };
-
-
-
-
         HandlerSubmit = (e)=>{
             e.preventDefault();
             this.props.form.validateFields((err, values) => {

@@ -8,19 +8,34 @@ class MemberTransaction extends Component{
 
     columns = [
         {
-            title: "Use or Add",
-            dataIndex: "add_or_use",
-            key: "add_or_use"
-        },
-        {
-            title: "Point",
-            dataIndex: "point",
-            key: "point"
-        },
-        {
             title: "Date time",
             dataIndex: "date_time",
             key: "date_time"
+        },
+        {
+            title: "Amount",
+            dataIndex: "amount",
+            key: "amount"
+        },
+        {
+            title: "Actual Amount",
+            dataIndex: "pay_amount",
+            key: "pay_amount"
+        },
+        {
+            title: "Point Used",
+            dataIndex: "used_point",
+            key: "used_point"
+        },
+        {
+            title: "Before Point",
+            dataIndex: "before_point",
+            key: "before_point"
+        },
+        {
+            title: "After Point",
+            dataIndex: "after_point",
+            key: "after_point"
         }
     ];
 
@@ -34,22 +49,29 @@ class MemberTransaction extends Component{
         loading:false
     };
 
+    componentWillUnmount = () => {
+        this.setState = state =>{
+            return ;
+        }
+    }
+
     componentDidMount = () => {
         this.setState({loading:true})
         GetMemberTransaction(this.props.match.params.memberId).then(res=>{
             this.setState({
                 loading: false,
                 data: res.data.map(s=>{
-                    return {key: s._id.$oid,point: s.point,add_or_use: s.add_or_use?"Add":"Use",date_time:moment(s.date_time.$date).format('lll')}
+                    s.date_time = moment(s.date_time.$date).format('lll');
+                    return s;
                 })
             })
         }).catch(err=>{
             this.setState({
                 loading:false
-            })
+            });
             console.log(err)
         })
-    }
+    };
 
     render(){
 
